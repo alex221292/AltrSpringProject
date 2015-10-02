@@ -1,0 +1,60 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/security
+	http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+    <beans:bean id='bCryptPasswordEncoder' class='org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder'/>
+
+    <!-- enable use-expressions -->
+    <http auto-config="true" use-expressions="true">
+        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/common**" access="hasRole('ROLE_ADMIN')"/>
+
+        <!-- access denied page -->
+        <access-denied-handler error-page="/403"/>
+        <form-login
+                login-page="/login"
+                default-target-url="/common"
+                authentication-failure-url="/login?error"
+                username-parameter="username"
+                password-parameter="password"/>
+        <logout logout-success-url="/login?logout"/>
+        <!-- enable csrf protection -->
+        <csrf/>
+    </http>
+
+    <!-- Select users and user_roles from database -->
+    <authentication-manager>
+        <authentication-provider>
+            <jdbc-user-service data-source-ref="dataSource"
+                               users-by-username-query=
+                                       "select o.name as username, passw.value as password, enabled.value as enabled
+from t_objects o,
+t_params passw,
+t_params isactive,
+t_list_values enabled
+where o.object_type_id = 9 /* User */
+and o.name = ?
+and passw.object_id = o.object_id
+and passw.attr_id = 13 /* Password */
+and isactive.object_id = o.object_id
+and isactive.attr_id = 14 /* Is Enabled */
+and enabled.list_value_id = isactive.list_value_id"
+                               authorities-by-username-query=
+                                       "select user.name as name, role.name as role
+from t_objects user,
+t_objects role,
+t_references user2role
+where user.object_type_id = 9 /* User */
+and user.name = ?
+and user2role.object_id = user.object_id
+and user2role.attr_id = 15 /* Ref to Role */
+and role.object_id = user2role.reference"/>
+            <password-encoder ref="bCryptPasswordEncoder"/>
+        </authentication-provider>
+    </authentication-manager>
+
+</beans:beans>
