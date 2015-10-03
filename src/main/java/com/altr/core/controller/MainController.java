@@ -29,6 +29,7 @@ public class MainController {
 
     private CommonPageContext commonPageContext;
     private TObjectService tObjectService;
+
     @Autowired(required = true)
     @Qualifier(value = "tObjectService")
     public void settObjectService(TObjectService ts) {
@@ -52,8 +53,7 @@ public class MainController {
         String url = "";
         if ("1".equals(mode)) {
             url = "edit";
-        }
-        else {
+        } else {
             url = "common";
         }
         commonPageContext.getPageData(Integer.parseInt(id), tab, mode);
@@ -118,8 +118,8 @@ public class MainController {
     }
 
     @RequestMapping(value = "/common", method = RequestMethod.POST)
-    public String update(@RequestParam (value = "objectid", required = false) String  objectId,
-                         @RequestParam (value = "tab", required = false) String tab,
+    public String update(@RequestParam(value = "objectid", required = false) String objectId,
+                         @RequestParam(value = "tab", required = false) String tab,
                          @RequestParam Map<String, String> updateParam, Model model) {
         updateParam.remove("objectid");
         updateParam.remove("tab");
@@ -130,6 +130,20 @@ public class MainController {
         tObjectService.updateParamBulk(Integer.parseInt(objectId), updateParam);
 
         return "redirect:/common?id=" + objectId + "&tab=" + tab;
+    }
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String test(@RequestParam(value = "objectid", required = false) String objectId,
+                       @RequestParam(value = "tab", required = false) String tab,
+                       @RequestParam Map<String, String> deleteIds, Model model) {
+        deleteIds.remove("objectid");
+        deleteIds.remove("tab");
+        String redirectUrl = "redirect:/common?id=" + objectId + "&tab=" + tab;
+        /*model.addAttribute("value1", deleteIds.get("0"));
+        model.addAttribute("value2", deleteIds.get("1"));
+        model.addAttribute("url", redirectUrl);*/
+        tObjectService.deleteObjectBulk(deleteIds);
+        return redirectUrl;
     }
 
 }

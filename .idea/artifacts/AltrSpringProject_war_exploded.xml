@@ -48,7 +48,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="E:\application\AltrSpringProject\target/MANIFEST.MF" />
+        <element id="file-copy" path="E:\GIT\AltrSpringProject\target/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="AltrSpringProject/web/Web" />
     </root>

@@ -162,4 +162,24 @@ public class TObjectServiceImpl implements TObjectService {
         }
     }
 
+    @Override
+    @Transactional
+    public void deleteObjectBulk(Map<String, String> deleteParams){
+        for (final Map.Entry<String, String> entry : deleteParams.entrySet()) {
+            try {
+                jdbcTemplate.execute("DELETE from t_objects where object_id = ?", new PreparedStatementCallback<Boolean>() {
+                    @Override
+                    public Boolean doInPreparedStatement(PreparedStatement ps)
+                            throws SQLException, DataAccessException {
+                        ps.setInt(1, Integer.parseInt(entry.getValue()));
+                        return ps.execute();
+
+                    }
+                });
+            }catch (Exception e){
+                logger.info("[deleteObjectBulk] Error");
+            }
+        }
+    }
+
 }

@@ -11,16 +11,6 @@
         </webroots>
       </configuration>
     </facet>
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/src/main/resources/beans.xml</file>
-          <file>file://$MODULE_DIR$/src/main/resources/beans.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/spring-security.xml</file>
-          <file>file://$MODULE_DIR$/src/main/webapp/WEB-INF/spring/spring-database.xml</file>
-        </fileset>
-      </configuration>
-    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/target/classes" />

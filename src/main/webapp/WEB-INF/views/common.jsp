@@ -12,6 +12,7 @@
 </head>
 <body>
 <div class="main">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <div class="header"><a href="/AltrSpringProject/common"><img class="logo"
                                                                  src="<c:url value="/resources/css/logo.png" />"></a>
 
@@ -66,11 +67,32 @@
         </c:if>
         <c:forEach items="${info.externalActiveSubgroup.groups}" var="group">
             <p class="group-name">${group.name}</p>
+
             <div class="parameters">
                 <c:if test="${not empty group.tObjects}">
+                    <a href="javascript:void(0)" onclick="javascript:goToURL()" class="button-href">Delete</a>
+                    <script>
+                        function goToURL() {
+                            var selected = [];
+                            $('.parameters input:checked').each(function () {
+                                selected.push($(this).attr('name'));
+                            });
+                            if (selected.length == 0) {
+                                alert("You must choose at least one object");
+                                return false;
+                            }
+                            var url = "/AltrSpringProject/test?";
+                            for (var i = 0; i < selected.length; i++) {
+                                url = url + i + "=" + selected[i] + "&";
+                            }
+                            url = url + "objectid=" + '<c:out value="${info.tObject.id}"/>' + "&tab=" + '<c:out value="${info.externalActiveSubgroup.urlSubgroup}"/>';
+                            window.location.href = url;
+                        }
+                    </script>
                     <table>
                         <thead>
                         <tr>
+                            <td class="thead-content"></td>
                             <td class="thead-content">Name</td>
                             <td class="thead-content">Object Type</td>
                             <td class="thead-content">Description</td>
