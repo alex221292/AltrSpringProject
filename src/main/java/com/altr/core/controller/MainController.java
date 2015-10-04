@@ -132,7 +132,7 @@ public class MainController {
         return "redirect:/common?id=" + objectId + "&tab=" + tab;
     }
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
     public String test(@RequestParam(value = "objectid", required = false) String objectId,
                        @RequestParam(value = "tab", required = false) String tab,
                        @RequestParam Map<String, String> deleteIds, Model model) {

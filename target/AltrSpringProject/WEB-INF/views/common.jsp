@@ -81,7 +81,7 @@
                                 alert("You must choose at least one object");
                                 return false;
                             }
-                            var url = "/AltrSpringProject/test?";
+                            var url = "/AltrSpringProject/delete?";
                             for (var i = 0; i < selected.length; i++) {
                                 url = url + i + "=" + selected[i] + "&";
                             }
