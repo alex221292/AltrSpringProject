@@ -41,6 +41,10 @@
     </div>
     <div class="content">
         <form id="myform" action="" method="post">
+            <input type="hidden" name="objectid" value="${info.tObject.id}">
+            <input type="hidden"
+                   name="${_csrf.parameterName}"
+                   value="${_csrf.token}"/>
             <c:if test="${info.externalActiveSubgroup.subgroupType == 0}">
             <div class="parameters">
                 <input type="submit" value="Update" class="button">
@@ -82,10 +86,6 @@
                     </table>
                 </c:if>
                 <c:if test="${not empty group.attributes}">
-                    <input type="hidden" name="objectid" value="${info.tObject.id}">
-                    <input type="hidden"
-                           name="${_csrf.parameterName}"
-                           value="${_csrf.token}"/>
                     <table>
                         <c:forEach items="${group.attributes}" var="attribute">
                             <tr>
