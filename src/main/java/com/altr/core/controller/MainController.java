@@ -146,4 +146,10 @@ public class MainController {
         return redirectUrl;
     }
 
+    @RequestMapping(value = "/create", method = RequestMethod.GET)
+    public String create(Model model) {
+        tObjectService.createObject("test object", 11, 10);
+        return "common1";
+    }
+
 }

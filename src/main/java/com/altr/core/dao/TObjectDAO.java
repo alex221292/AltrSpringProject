@@ -12,6 +12,7 @@ public interface TObjectDAO
     public TAttrGroup getAttrGroupById(int id);
     public TParam getParamByObjectAndAttr(int object, int attribute);
     public TListValue getListValueById(int id);
-    public void saveParam(TParam param);
+    public void save(Object object);
     public void delete(Object param);
+    public TObjectType getObjectTypeById(int id);
 }

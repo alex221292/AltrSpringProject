@@ -17,10 +17,17 @@ public class TObjectDAOImpl implements TObjectDAO {
     }
 
     @Override
-    public TObject getObjectById(int id) {
+     public TObject getObjectById(int id) {
         Session session = this.sessionFactory.getCurrentSession();
         TObject tObject = (TObject) session.get(TObject.class, new Integer(id));
         return tObject;
+    }
+
+    @Override
+    public TObjectType getObjectTypeById(int id) {
+        Session session = this.sessionFactory.getCurrentSession();
+        TObjectType tObjectType = (TObjectType) session.get(TObjectType.class, new Integer(id));
+        return tObjectType;
     }
 
     @Override
@@ -59,12 +66,13 @@ public class TObjectDAOImpl implements TObjectDAO {
     }
 
     @Override
-    public void saveParam(TParam param) {
+    public void save(Object object) {
         try {
-            Session session = this.sessionFactory.getCurrentSession();
+            Session session = this.sessionFactory.openSession();
             session.beginTransaction();
-            session.save(param);
+            session.save(object);
             session.getTransaction().commit();
+            session.close();
         }
         catch (Exception e){
             logger.error("[saveParam] Error");
@@ -74,10 +82,11 @@ public class TObjectDAOImpl implements TObjectDAO {
     @Override
     public void delete(Object param) {
         try {
-            Session session = this.sessionFactory.getCurrentSession();
+            Session session = this.sessionFactory.openSession();
             session.beginTransaction();
             session.delete(param);
             session.getTransaction().commit();
+            session.close();
         }
         catch (Exception e){
             logger.error("[saveParam] Error");

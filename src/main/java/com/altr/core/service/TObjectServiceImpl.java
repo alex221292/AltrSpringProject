@@ -109,7 +109,7 @@ public class TObjectServiceImpl implements TObjectService {
     @Transactional
     public void updateParam(final int objectId, final int attrId, final String value) {
         try {
-            if (sqlStatement.getIntBySQL("select 1 from t_params where attr_id = ? and object_id = ?", new Object[]{attrId, objectId}) == 1) {
+            /*if (sqlStatement.getIntBySQL("select 1 from t_params where attr_id = ? and object_id = ?", new Object[]{attrId, objectId}) == 1) {
                 TParam param = getParamByObjectAndAttr(objectId, attrId);
                 if ("".equals(value)) {
                     jdbcTemplate.execute("DELETE from t_params where attr_id = ? and object_id = ?", new PreparedStatementCallback<Boolean>() {
@@ -137,14 +137,34 @@ public class TObjectServiceImpl implements TObjectService {
 
                     }
                 });
+            }*/
+            if (sqlStatement.getIntBySQL("select 1 from t_params where attr_id = ? and object_id = ?", new Object[]{attrId, objectId}) != 1) {
+                TParamPK paramPK = new TParamPK(attrId, objectId);
+                tObjectDAO.save(paramPK);
+                TParam newParam = new TParam();
+                newParam.setId(paramPK);
+                newParam.setValue(value);
+                tObjectDAO.save(newParam);
+            } else {
+                TParam param = tObjectDAO.getParamByObjectAndAttr(objectId, attrId);
+                if ("".equals(value)) {
+                    tObjectDAO.delete(param);
+                } else {
+                    param.setValue(value);
+                }
             }
+
+
+
+
+
         /*if (param == null) {
             logger.info("[updateParam] insert");
             TParam newParam = new TParam();
             newParam.setObjectId(objectId);
             newParam.setAttrId(attrId);
             newParam.setValue(value);
-            tObjectDAO.saveParam(newParam);
+            tObjectDAO.save(newParam);
 
         } else {
 
@@ -164,7 +184,7 @@ public class TObjectServiceImpl implements TObjectService {
 
     @Override
     @Transactional
-    public void deleteObjectBulk(Map<String, String> deleteParams){
+    public void deleteObjectBulk(Map<String, String> deleteParams) {
         for (final Map.Entry<String, String> entry : deleteParams.entrySet()) {
             try {
                 jdbcTemplate.execute("DELETE from t_objects where object_id = ?", new PreparedStatementCallback<Boolean>() {
@@ -176,9 +196,24 @@ public class TObjectServiceImpl implements TObjectService {
 
                     }
                 });
-            }catch (Exception e){
+            } catch (Exception e) {
                 logger.info("[deleteObjectBulk] Error");
             }
+        }
+    }
+
+    @Override
+    @Transactional
+    public boolean createObject(String name, Integer parentId, Integer objectTypeId) {
+        try {
+            TObject object = new TObject();
+            object.setParentId(parentId);
+            object.setName(name);
+            object.setObjectType(tObjectDAO.getObjectTypeById(objectTypeId));
+            tObjectDAO.save(object);
+            return true;
+        } catch (Exception e) {
+            return false;
         }
     }
 
