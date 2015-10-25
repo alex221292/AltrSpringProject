@@ -109,38 +109,8 @@ public class TObjectServiceImpl implements TObjectService {
     @Transactional
     public void updateParam(final int objectId, final int attrId, final String value) {
         try {
-            /*if (sqlStatement.getIntBySQL("select 1 from t_params where attr_id = ? and object_id = ?", new Object[]{attrId, objectId}) == 1) {
-                TParam param = getParamByObjectAndAttr(objectId, attrId);
-                if ("".equals(value)) {
-                    jdbcTemplate.execute("DELETE from t_params where attr_id = ? and object_id = ?", new PreparedStatementCallback<Boolean>() {
-                        @Override
-                        public Boolean doInPreparedStatement(PreparedStatement ps)
-                                throws SQLException, DataAccessException {
-                            ps.setInt(1, attrId);
-                            ps.setInt(2, objectId);
-                            return ps.execute();
-
-                        }
-                    });
-                } else {
-                    param.setValue(value);
-                }
-            } else {
-                jdbcTemplate.execute("INSERT into t_params (attr_id, object_id, value) VALUES (?, ?, ?)", new PreparedStatementCallback<Boolean>() {
-                    @Override
-                    public Boolean doInPreparedStatement(PreparedStatement ps)
-                            throws SQLException, DataAccessException {
-                        ps.setInt(1, attrId);
-                        ps.setInt(2, objectId);
-                        ps.setString(3, value);
-                        return ps.execute();
-
-                    }
-                });
-            }*/
             if (sqlStatement.getIntBySQL("select 1 from t_params where attr_id = ? and object_id = ?", new Object[]{attrId, objectId}) != 1) {
                 TParamPK paramPK = new TParamPK(attrId, objectId);
-                tObjectDAO.save(paramPK);
                 TParam newParam = new TParam();
                 newParam.setId(paramPK);
                 newParam.setValue(value);
@@ -153,22 +123,6 @@ public class TObjectServiceImpl implements TObjectService {
                     param.setValue(value);
                 }
             }
-
-
-
-
-
-        /*if (param == null) {
-            logger.info("[updateParam] insert");
-            TParam newParam = new TParam();
-            newParam.setObjectId(objectId);
-            newParam.setAttrId(attrId);
-            newParam.setValue(value);
-            tObjectDAO.save(newParam);
-
-        } else {
-
-        }*/
         } catch (Exception e) {
             logger.info("update" + e.toString());
         }

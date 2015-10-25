@@ -190,6 +190,7 @@ public class CommonPageContextImpl implements CommonPageContext {
                 attribute.setListValue(tObjectService.getListValueById(listValueId));
             }
         }
+
         return attribute;
     }
 

@@ -3,7 +3,7 @@ package com.altr.core.helper;
 public interface SystemConstants {
 
     public static class IDS {
-        public static final String  DEFAULT_OBJECT = "10";
+        public static final String DEFAULT_OBJECT = "10";
     }
 
     public static class SQL {
@@ -36,6 +36,13 @@ public interface SystemConstants {
                 "t_attr_object_types aot\n" +
                 "where a.attr_group_id = ?\n" +
                 "and a.attr_type_id in (1, 6)\n" +
+                "and aot.attr_id = a.attr_id\n" +
+                "and aot.object_type_id = ?";
+        public static final String GET_ATTRIBUTES_BY_GROUP_AND_OBJECT_TYPE_AND_ATTR_TYPE = "select a.attr_id\n" +
+                "from t_attributes a,\n" +
+                "t_attr_object_types aot\n" +
+                "where a.attr_group_id = ?\n" +
+                "and a.attr_type_id = ?\n" +
                 "and aot.attr_id = a.attr_id\n" +
                 "and aot.object_type_id = ?";
         public static final String GET_START_GROUP_BY_OBJECT_ID = "select distinct ag.attr_group_id\n" +
