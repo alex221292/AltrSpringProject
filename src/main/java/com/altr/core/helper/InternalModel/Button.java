@@ -4,6 +4,12 @@ public class Button {
     private String name;
     private String command;
 
+    public Button(String name, String command)
+    {
+        this.name = name;
+        this.command = command;
+    }
+
     public String getName() {
         return name;
     }

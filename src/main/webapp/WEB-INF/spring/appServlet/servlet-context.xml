@@ -63,14 +63,8 @@
     <beans:bean id="tObjectDAO" class="com.altr.core.dao.TObjectDAOImpl">
         <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </beans:bean>
-    <beans:bean id="tAttributeDAO" class="com.altr.core.dao.TAttributeDAOImpl">
-        <beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
-    </beans:bean>
     <beans:bean id="tObjectService" class="com.altr.core.service.TObjectServiceImpl">
         <beans:property name="tObjectDAO" ref="tObjectDAO"></beans:property>
-    </beans:bean>
-    <beans:bean id="tAttributeService" class="com.altr.core.service.TAttributeServiceImpl">
-        <beans:property name="tAttributeDAO" ref="tAttributeDAO"></beans:property>
     </beans:bean>
     <beans:bean id="tObjectUtils" class="com.altr.core.helper.TObjectUtils">
     </beans:bean>

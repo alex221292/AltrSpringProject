@@ -2,13 +2,12 @@ package com.altr.core.webcontext;
 
 import com.altr.core.helper.CoreTools;
 import com.altr.core.helper.InternalModel.Attribute;
+import com.altr.core.helper.InternalModel.Button;
 import com.altr.core.helper.InternalModel.Group;
 import com.altr.core.helper.InternalModel.Subgroup;
 import com.altr.core.helper.SystemConstants;
-import com.altr.core.helper.TObjectUtils;
 import com.altr.core.model.TAttribute;
 import com.altr.core.model.TObject;
-import com.altr.core.model.TParam;
 import com.altr.core.service.TObjectService;
 import com.altr.core.sql.SQLStatement;
 import org.slf4j.Logger;
@@ -17,9 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
-import org.springframework.jdbc.core.JdbcTemplate;
 
-import javax.sql.DataSource;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -129,6 +126,7 @@ public class CommonPageContextImpl implements CommonPageContext {
                     List<TObject> tObjects = new ArrayList<TObject>();
                     Collection<Integer> objectIds = new ArrayList<Integer>();
                     List<Attribute> attributes = new ArrayList<Attribute>();
+                    List<Button> buttons = new ArrayList<Button>();
                     if (Integer.valueOf(1).equals(group.getFlag())) {
                         isInfoSubgroup = false;
                         objectIds = sqlStatement.getIntListBySQL(SystemConstants.SQL.GET_STRUCTURAL_OBJECTS_BY_GROUP, new Object[]{group.getGroupId()});
@@ -140,10 +138,16 @@ public class CommonPageContextImpl implements CommonPageContext {
                         groupAttributes = sqlStatement.getIntListBySQL(SystemConstants.SQL.GET_ATTRIBUTES_BY_GROUP_AND_TYPE, new Object[]{group.getGroupId(), tObject.getObjectType().getObjectTypeId()});
                         for (Integer attrId : groupAttributes) {
                             TAttribute tAttribute = tObjectService.getAttributeById(attrId);
+                            Integer attrType = tAttribute.gettAttrType().getAttrTypeId();
                             if (CoreTools.isHidden(tAttribute.getFlags())) {
                                 continue;
                             }
-                            attributes.add(generateAttribute(tAttribute, attrId));
+                            if (Integer.valueOf(7).equals(attrType)){
+                                Button button = new Button(tAttribute.getName(), CoreTools.getButtonCommand(tAttribute.getProperties()));
+                                buttons.add(button);
+                                continue;
+                            }
+                            attributes.add(generateAttribute(tAttribute, attrId, attrType));
                         }
                     }
                     for (Integer curObj : objectIds) {
@@ -151,6 +155,7 @@ public class CommonPageContextImpl implements CommonPageContext {
                     }
                     group.settObjects(tObjects);
                     group.setAttributes(attributes);
+                    group.setButtons(buttons);
                 }
                 if (isInfoSubgroup) externalActiveSubgroup.setSubgroupType(0);
             } else {
@@ -162,9 +167,8 @@ public class CommonPageContextImpl implements CommonPageContext {
         }
     }
 
-    private Attribute generateAttribute(TAttribute tAttribute, Integer attrId) {
+    private Attribute generateAttribute(TAttribute tAttribute, Integer attrId, Integer attrType) {
         Attribute attribute = new Attribute();
-        Integer attrType = tAttribute.gettAttrType().getAttrTypeId();
         attribute.setAttrType(attrType);
         attribute.setAttribute(tAttribute);
         if (Integer.valueOf(1).equals(attrType)) {

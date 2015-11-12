@@ -19,7 +19,7 @@ public class Group {
     private Integer flag;
     private List<TObject> tObjects = new ArrayList<TObject>();
     private List<Attribute> attributes = new ArrayList<Attribute>();
-    private ArrayList<Button> buttons = new ArrayList<Button>();
+    private List<Button> buttons = new ArrayList<Button>();
 
     public Group() {
 
@@ -115,11 +115,11 @@ public class Group {
         this.attributes = attributes;
     }
 
-    public ArrayList<Button> getButtons() {
+    public List<Button> getButtons() {
         return buttons;
     }
 
-    public void setButtons(ArrayList<Button> buttons) {
+    public void setButtons(List<Button> buttons) {
         this.buttons = buttons;
     }
 }

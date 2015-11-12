@@ -59,4 +59,17 @@ public class CoreTools {
         return result;
     }
 
+    public static String getButtonCommand(String properties){
+        String result = "";
+        Pattern pattern = Pattern.compile("command='(.*)'");
+        Matcher matcher = pattern.matcher(properties);
+        if(matcher.find()){
+            int count = matcher.groupCount();
+            for(int i=1;i<=count;i++){
+                result = matcher.group(i);
+            }
+        }
+        return result;
+    }
+
 }
