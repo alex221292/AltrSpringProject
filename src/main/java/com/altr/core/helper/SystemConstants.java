@@ -35,7 +35,7 @@ public interface SystemConstants {
                 "from t_attributes a,\n" +
                 "t_attr_object_types aot\n" +
                 "where a.attr_group_id = ?\n" +
-                "and a.attr_type_id in (1, 6)\n" +
+                "and a.attr_type_id in (1, 6, 7)\n" +
                 "and aot.attr_id = a.attr_id\n" +
                 "and aot.object_type_id = ?";
         public static final String GET_ATTRIBUTES_BY_GROUP_AND_OBJECT_TYPE_AND_ATTR_TYPE = "select a.attr_id\n" +

@@ -127,15 +127,37 @@ public class CommonPageContextImpl implements CommonPageContext {
                     Collection<Integer> objectIds = new ArrayList<Integer>();
                     List<Attribute> attributes = new ArrayList<Attribute>();
                     List<Button> buttons = new ArrayList<Button>();
+                    Collection<Integer> groupAttributes = new ArrayList<Integer>();
+                    groupAttributes = sqlStatement.getIntListBySQL(SystemConstants.SQL.GET_ATTRIBUTES_BY_GROUP_AND_TYPE, new Object[]{group.getGroupId(), tObject.getObjectType().getObjectTypeId()});
                     if (Integer.valueOf(1).equals(group.getFlag())) {
                         isInfoSubgroup = false;
                         objectIds = sqlStatement.getIntListBySQL(SystemConstants.SQL.GET_STRUCTURAL_OBJECTS_BY_GROUP, new Object[]{group.getGroupId()});
+                        for (Integer attrId : groupAttributes) {
+                            TAttribute tAttribute = tObjectService.getAttributeById(attrId);
+                            Integer attrType = tAttribute.gettAttrType().getAttrTypeId();
+                            if (CoreTools.isHidden(tAttribute.getFlags())) {
+                                continue;
+                            }
+                            if (Integer.valueOf(7).equals(attrType)){
+                                Button button = new Button(tAttribute.getName(), CoreTools.getButtonCommand(tAttribute.getProperties()));
+                                buttons.add(button);
+                            }
+                        }
                     } else if ((Integer.valueOf(2).equals(group.getFlag()))) {
                         isInfoSubgroup = false;
                         objectIds = sqlStatement.getIntListBySQL(SystemConstants.SQL.GET_CHILDREN_OBJECTS_BY_GROUP_AND_OBJECT, new Object[]{group.getGroupId(), objectId});
+                        for (Integer attrId : groupAttributes) {
+                            TAttribute tAttribute = tObjectService.getAttributeById(attrId);
+                            Integer attrType = tAttribute.gettAttrType().getAttrTypeId();
+                            if (CoreTools.isHidden(tAttribute.getFlags())) {
+                                continue;
+                            }
+                            if (Integer.valueOf(7).equals(attrType)){
+                                Button button = new Button(tAttribute.getName(), CoreTools.getButtonCommand(tAttribute.getProperties()));
+                                buttons.add(button);
+                            }
+                        }
                     } else if ((Integer.valueOf(0).equals(group.getFlag()))) {
-                        Collection<Integer> groupAttributes = new ArrayList<Integer>();
-                        groupAttributes = sqlStatement.getIntListBySQL(SystemConstants.SQL.GET_ATTRIBUTES_BY_GROUP_AND_TYPE, new Object[]{group.getGroupId(), tObject.getObjectType().getObjectTypeId()});
                         for (Integer attrId : groupAttributes) {
                             TAttribute tAttribute = tObjectService.getAttributeById(attrId);
                             Integer attrType = tAttribute.gettAttrType().getAttrTypeId();
