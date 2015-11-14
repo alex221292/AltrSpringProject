@@ -73,5 +73,10 @@ public interface SystemConstants {
                 "from t_attributes a, t_attr_type_defs ad\n" +
                 "where a.attr_id = ?\n" +
                 "and ad.attr_type_def_id = a.attr_type_def_id";
+
+        public static final String GET_OBJECT_ID_BY_OT_AND_NAME = "select object_id\n" +
+                "from t_objects\n" +
+                "where object_type_id = ?\n" +
+                "and name = ?";
     }
 }

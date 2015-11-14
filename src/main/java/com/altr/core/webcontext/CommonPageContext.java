@@ -20,4 +20,6 @@ public interface CommonPageContext
     public List<Subgroup> getSubgroups();
     public Subgroup getExternalActiveSubgroup();
     public String getTest();
+    public void setUser(TObject user);
+    public TObject getUser();
 }

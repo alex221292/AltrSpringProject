@@ -52,6 +52,8 @@ public class MainController {
                               @RequestParam(value = "jAdapter", required = false) String jAdapter,
                               @RequestParam Map<String, String> selectedItems,
                               Model model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String userName = auth.getName();
         CoreTools.cleanMap(selectedItems, new String[]{"id", "tab", "mode", "aid", "command", "jAdapter"});
         if (id == null) id = SystemConstants.IDS.DEFAULT_OBJECT;
         if (CoreTools.isEmpty(tab)) tab = "empty";
@@ -64,9 +66,10 @@ public class MainController {
         if ("1".equals(mode)) {
             url = "edit";
         } else {
-            url = "common";
+            url = "sosnicky_view";
         }
         commonPageContext.getPageData(Integer.parseInt(id), tab, mode);
+        commonPageContext.setUser(tObjectService.getCurrentUser(userName));
         model.addAttribute("info", commonPageContext);
         return url;
     }

@@ -173,4 +173,17 @@ public class TObjectServiceImpl implements TObjectService {
         }
     }
 
+    @Override
+    @Transactional
+    public TObject getCurrentUser(String name){
+        TObject user = new TObject();
+        try {
+            user = tObjectDAO.getObjectById(sqlStatement.getIntBySQL(SystemConstants.SQL.GET_OBJECT_ID_BY_OT_AND_NAME,
+                    new Object[]{9, name}));
+            return user;
+        } catch (Exception e){
+        }
+        return user;
+    }
+
 }

@@ -52,6 +52,7 @@ public class CommonPageContextImpl implements CommonPageContext {
     private String subgroup;
     private Subgroup externalActiveSubgroup;
     private String test;
+    private TObject user;
 
     @Override
     @Transactional
@@ -262,4 +263,11 @@ public class CommonPageContextImpl implements CommonPageContext {
         return test;
     }
 
+    public TObject getUser() {
+        return user;
+    }
+
+    public void setUser(TObject user) {
+        this.user = user;
+    }
 }

@@ -21,4 +21,5 @@ public interface TObjectService
     public void updateParamBulk(int objectId, Map<String, String> updateParam);
     public void deleteObjectBulk(Map<String, String> deleteParams, Integer attrId);
     public boolean createObject(String name, Integer parentId, Integer objectTypeId);
+    public TObject getCurrentUser(String name);
 }
