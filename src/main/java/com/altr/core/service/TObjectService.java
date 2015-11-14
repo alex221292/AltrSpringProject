@@ -19,6 +19,6 @@ public interface TObjectService
     public TListValue getListValueById(int lvId);
     public void updateParam(int objectId, int attrId, String value) throws Exception;
     public void updateParamBulk(int objectId, Map<String, String> updateParam);
-    public void deleteObjectBulk(Map<String, String> deleteParams);
+    public void deleteObjectBulk(Map<String, String> deleteParams, Integer attrId);
     public boolean createObject(String name, Integer parentId, Integer objectTypeId);
 }

@@ -139,7 +139,7 @@ public class CommonPageContextImpl implements CommonPageContext {
                                 continue;
                             }
                             if (Integer.valueOf(7).equals(attrType)){
-                                Button button = new Button(tAttribute.getName(), CoreTools.getButtonCommand(tAttribute.getProperties()));
+                                Button button = new Button(tAttribute.getName(), tAttribute.getProperties(), attrId);
                                 buttons.add(button);
                             }
                         }
@@ -153,7 +153,7 @@ public class CommonPageContextImpl implements CommonPageContext {
                                 continue;
                             }
                             if (Integer.valueOf(7).equals(attrType)){
-                                Button button = new Button(tAttribute.getName(), CoreTools.getButtonCommand(tAttribute.getProperties()));
+                                Button button = new Button(tAttribute.getName(), CoreTools.getButtonCommand(tAttribute.getProperties()), attrId);
                                 buttons.add(button);
                             }
                         }
@@ -165,7 +165,7 @@ public class CommonPageContextImpl implements CommonPageContext {
                                 continue;
                             }
                             if (Integer.valueOf(7).equals(attrType)){
-                                Button button = new Button(tAttribute.getName(), CoreTools.getButtonCommand(tAttribute.getProperties()));
+                                Button button = new Button(tAttribute.getName(), CoreTools.getButtonCommand(tAttribute.getProperties()), attrId);
                                 buttons.add(button);
                                 continue;
                             }

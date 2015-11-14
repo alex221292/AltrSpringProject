@@ -67,7 +67,7 @@
         </c:if>
         <c:forEach items="${info.externalActiveSubgroup.groups}" var="group">
             <script>
-                function goToURL() {
+                function goToURL(command, id) {
                     var selected = [];
                     $('.parameters input:checked').each(function () {
                         selected.push($(this).attr('name'));
@@ -76,19 +76,19 @@
                         alert("You must choose at least one object");
                         return false;
                     }
-                    var url = "/AltrSpringProject/delete?";
+                    var url = "/AltrSpringProject/common?";
                     for (var i = 0; i < selected.length; i++) {
                         url = url + i + "=" + selected[i] + "&";
                     }
-                    url = url + "objectid=" + '<c:out value="${info.tObject.id}"/>' + "&tab=" + '<c:out value="${info.externalActiveSubgroup.urlSubgroup}"/>';
+                    url = url + "objectid=" + '<c:out value="${info.tObject.id}"/>' + "&tab=" + '<c:out value="${info.externalActiveSubgroup.urlSubgroup}"/>' + "&" + command + "&aid=" + id;
                     window.location.href = url;
                 }
             </script>
             <p class="group-name">${group.name}</p>
             <div class="parameters">
                 <c:forEach items="${group.buttons}" var="button">
-                    <div>
-                        <a href="javascript:void(0)" onclick="javascript:goToURL()" class="button-href">${button.name}</a>
+                    <div style="display: inline-block;">
+                        <a href="javascript:void(0)" onclick="javascript:goToURL(<c:out value="${button.command}"/>, <c:out value="${button.attrId}"/>)" class="button-href">${button.name}</a>
                     </div>
                 </c:forEach>
                 <c:if test="${not empty group.tObjects}">

@@ -138,14 +138,16 @@ public class TObjectServiceImpl implements TObjectService {
 
     @Override
     @Transactional
-    public void deleteObjectBulk(Map<String, String> deleteParams) {
+    public void deleteObjectBulk(Map<String, String> deleteParams, Integer attrId) {
+        final Integer objectTypeId = sqlStatement.getIntBySQL(SystemConstants.SQL.GET_REF_OBJ_TYPE_BY_ATTR_ID, new Object[]{attrId});
         for (final Map.Entry<String, String> entry : deleteParams.entrySet()) {
             try {
-                jdbcTemplate.execute("DELETE from t_objects where object_id = ?", new PreparedStatementCallback<Boolean>() {
+                jdbcTemplate.execute("DELETE from t_objects where object_id = ? and object_type_id = ?", new PreparedStatementCallback<Boolean>() {
                     @Override
                     public Boolean doInPreparedStatement(PreparedStatement ps)
                             throws SQLException, DataAccessException {
                         ps.setInt(1, Integer.parseInt(entry.getValue()));
+                        ps.setInt(2, objectTypeId);
                         return ps.execute();
 
                     }

@@ -47,9 +47,19 @@ public class MainController {
     public String defaultPage(@RequestParam(value = "id", required = false) String id,
                               @RequestParam(value = "tab", required = false) String tab,
                               @RequestParam(value = "mode", required = false) String mode,
+                              @RequestParam(value = "aid", required = false) String attrId,
+                              @RequestParam(value = "command", required = false) String command,
+                              @RequestParam(value = "jAdapter", required = false) String jAdapter,
+                              @RequestParam Map<String, String> selectedItems,
                               Model model) {
+        CoreTools.cleanMap(selectedItems, new String[]{"id", "tab", "mode", "aid", "command", "jAdapter"});
         if (id == null) id = SystemConstants.IDS.DEFAULT_OBJECT;
         if (CoreTools.isEmpty(tab)) tab = "empty";
+        if (!CoreTools.isEmpty(command)){
+            if ("delete".equals(command)){
+                tObjectService.deleteObjectBulk(selectedItems, Integer.parseInt(attrId));
+            }
+        }
         String url = "";
         if ("1".equals(mode)) {
             url = "edit";
@@ -130,20 +140,6 @@ public class MainController {
         tObjectService.updateParamBulk(Integer.parseInt(objectId), updateParam);
 
         return "redirect:/common?id=" + objectId + "&tab=" + tab;
-    }
-
-    @RequestMapping(value = "/delete", method = RequestMethod.GET)
-    public String test(@RequestParam(value = "objectid", required = false) String objectId,
-                       @RequestParam(value = "tab", required = false) String tab,
-                       @RequestParam Map<String, String> deleteIds, Model model) {
-        deleteIds.remove("objectid");
-        deleteIds.remove("tab");
-        String redirectUrl = "redirect:/common?id=" + objectId + "&tab=" + tab;
-        /*model.addAttribute("value1", deleteIds.get("0"));
-        model.addAttribute("value2", deleteIds.get("1"));
-        model.addAttribute("url", redirectUrl);*/
-        tObjectService.deleteObjectBulk(deleteIds);
-        return redirectUrl;
     }
 
     @RequestMapping(value = "/create", method = RequestMethod.GET)

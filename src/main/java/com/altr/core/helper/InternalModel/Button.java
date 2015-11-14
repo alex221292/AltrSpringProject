@@ -3,11 +3,12 @@ package com.altr.core.helper.InternalModel;
 public class Button {
     private String name;
     private String command;
+    private Integer attrId;
 
-    public Button(String name, String command)
-    {
+    public Button(String name, String command, Integer attrId) {
         this.name = name;
         this.command = command;
+        this.attrId = attrId;
     }
 
     public String getName() {
@@ -24,5 +25,13 @@ public class Button {
 
     public void setCommand(String command) {
         this.command = command;
+    }
+
+    public Integer getAttrId() {
+        return attrId;
+    }
+
+    public void setAttrId(Integer attrId) {
+        this.attrId = attrId;
     }
 }

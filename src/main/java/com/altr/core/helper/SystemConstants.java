@@ -68,5 +68,10 @@ public interface SystemConstants {
                 "and ot.object_type_id = atd.object_type_id\n" +
                 "and o.object_type_id = ot.object_type_id\n" +
                 "and o.parent_id = ?";
+
+        public static final String GET_REF_OBJ_TYPE_BY_ATTR_ID = "select ad.object_type_id\n" +
+                "from t_attributes a, t_attr_type_defs ad\n" +
+                "where a.attr_id = ?\n" +
+                "and ad.attr_type_def_id = a.attr_type_def_id";
     }
 }
