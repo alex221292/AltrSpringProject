@@ -7,7 +7,7 @@
 <%@page session="true" %>
 <html>
 <head>
-    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/sosnicky_style.css" />" rel="stylesheet">
     <title>Login</title>
 </head>
 <body onload='document.loginForm.username.focus();'>

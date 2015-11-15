@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @Controller
@@ -51,7 +52,9 @@ public class MainController {
                               @RequestParam(value = "command", required = false) String command,
                               @RequestParam(value = "jAdapter", required = false) String jAdapter,
                               @RequestParam Map<String, String> selectedItems,
-                              Model model) {
+                              Model model,
+                              HttpServletRequest request) {
+        String backUrl = request.getHeader("referer");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String userName = auth.getName();
         CoreTools.cleanMap(selectedItems, new String[]{"id", "tab", "mode", "aid", "command", "jAdapter"});
@@ -145,10 +148,11 @@ public class MainController {
         return "redirect:/common?id=" + objectId + "&tab=" + tab;
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.GET)
-    public String create(Model model) {
-        tObjectService.createObject("test object1", 11, 10);
+    /*@RequestMapping(value = "/create", method = RequestMethod.GET)
+    public String create(Model model, HttpServletRequest request) {
+        String url = request.getHeader("referer");
+        model.addAttribute("id", url);
         return "common1";
-    }
+    }*/
 
 }

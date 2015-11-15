@@ -62,9 +62,9 @@ a {
     font-size: 120%;
 }
 
-.tools-and-groups{
+.tools-and-groups {
     display: inline-block;
-    overflow:hidden;
+    overflow: hidden;
     position: absolute;
     right: 0;
     top: 30%;
@@ -86,21 +86,23 @@ a {
     top: 30%;
 }
 
-.logo-and-opt{
+.logo-and-opt {
     position: absolute;
     right: 0;
     top: 0;
     width: 100%;
+    height: 100%;
     font-size: 110%;
 }
 
 .userpic {
     float: right;
-    margin-right: 0;
+    margin-right: 5px;
     margin-left: 0;
     color: #8999a6;
     font-weight: 400;
     max-width: 3%;
+    border-radius: 40px;
 }
 
 .logo {
@@ -108,7 +110,7 @@ a {
     max-width: 15%;
 }
 
-.tools-objects{
+.tools-objects {
     position: absolute;
     right: 0;
     top: 30%;
@@ -116,12 +118,13 @@ a {
     font-weight: 700;
 }
 
-.option{
+.option {
     position: absolute;
-    right:0;
-    top: 40%;
+    right: 0;
+    bottom: 0;
     color: #8999a6;
     font-weight: 400;
+    font-size: 70%;
 }
 
 .group {
@@ -140,7 +143,7 @@ a {
     margin-right: 0;
     margin-left: 0;
     color: #8999a6;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .groupIsActive {
@@ -169,36 +172,47 @@ a {
 .group-name {
     display: inline-block;
     width: auto;
-    padding-left: 5px;
-    padding-right: 15px;
     padding-top: 4px;
-    background-color: #450404;
-    color: #ffffff;
-    border-radius: 0 15px 0 0;
+    color: #8999a6;
+    font-weight: 700;
+    font-size: 110%;
 }
 
 .thead-content {
+    padding-top: 5px;
     padding-left: 5px;
     padding-right: 5px;
     font-size: 90%;
-    background-color: #c90000;
-    color: #ffffff;
+    color: #8999a6;
+    font-weight: 400;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #8999a6;
 }
 
 .tr-content {
-    color: #000000;
+    padding-top: 5px;
+    color: #7e303e;
     padding-left: 5px;
-    background-color: #ebdfda;
+    font-weight: 400;
+}
+
+.object-content {
+    padding-top: 5px;
+    color: #7e303e;
+    padding-left: 10px;
+    font-weight: 400;
 }
 
 .td-content {
-    color: #ffffff;
+    color: #8999a6;
     padding-right: 2px;
 }
 
 .td-content-value {
-    color: #ffffff;
+    color: #7e303e;
     padding-right: 2px;
+    font-weight: 500;
 }
 
 .td-content-value-edit {
@@ -223,10 +237,8 @@ a {
 }
 
 .parameters {
-    padding-top: 5px;
+    padding-top: 10px;
     margin-bottom: 10px;
-    background:url(./ob_bg.gif) no-repeat;
-    background-size: 100%;
 }
 
 .msg {
@@ -257,26 +269,26 @@ a {
     border: 1px solid #000;
 }
 
-.button{
-    background-image:url(./btn2.png);
-    border:0;
-    width:100px;
-    height:20px;
-    color:#FFF;
+.button {
+    background-image: url(./btn2.png);
+    border: 0;
+    width: 100px;
+    height: 20px;
+    color: #FFF;
     border-radius: 5px 5px 5px 5px;
 }
 
-.button-objects{
+.button-objects {
     font-size: 80%;
-    background-image:url(./btn2.png);
-    border:0;
-    width:100px;
-    height:20px;
-    color:#FFF;
+    background-image: url(./btn2.png);
+    border: 0;
+    width: 100px;
+    height: 20px;
+    color: #FFF;
     border-radius: 5px 5px 5px 5px;
 }
 
-.button-href{
+.button-href {
     font-size: 80%;
     padding-right: 8px;
     padding-left: 8px;
@@ -284,10 +296,10 @@ a {
     padding-bottom: 2px;
     margin-bottom: 2px;
     margin-top: 2px;
-    background-image:url(./btn2.png);
-    border:0;
-    width:150px;
-    height:20px;
-    color:#FFF;
+    background-image: url(./btn2.png);
+    border: 0;
+    width: 150px;
+    height: 20px;
+    color: #FFF;
     border-radius: 5px 5px 5px 5px;
 }

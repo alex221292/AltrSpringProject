@@ -7,15 +7,17 @@
 <%@ page session="true" %>
 <html>
 <head>
-    <link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
+    <link href="<c:url value="/resources/css/sosnicky_style.css" />" rel="stylesheet">
     <title>${info.tObject.name}</title>
 </head>
 <body>
 <div class="main">
-    <div class="header"><a href="/AltrSpringProject/common"><img class="logo"
-                                                                 src="<c:url value="/resources/css/logo.png" />"></a>
+    <div class="header">
+        <a href="/AltrSpringProject/common"><img class="logo" src="<c:url value="/resources/css/logo.png" />"></a>
 
-        <div class="tools">
+        <div class="logo-and-opt">
+            <div class="user-info">${pageContext.request.userPrincipal.name}</div>
+            <img class="userpic" src="<c:url value="${info.user.tPicture.url}" />">
             <c:url value="/j_spring_security_logout" var="logoutUrl"/>
             <form action="${logoutUrl}" method="post" id="logoutForm">
                 <input type="hidden" name="${_csrf.parameterName}"
@@ -27,16 +29,16 @@
                 }
             </script>
             <c:if test="${pageContext.request.userPrincipal.name != null}">
-                <a href="javascript:formSubmit()" class="tools-objects">Log
-                    off: ${pageContext.request.userPrincipal.name}</a>
+                <a href="javascript:formSubmit()" class="option">Log off</a>
             </c:if>
-            <div class="tools-border">&nbsp</div>
         </div>
-        <div class="groups">
-            <c:forEach items="${info.subgroups}" var="subgroup">
-                <a href="?id=${info.tObject.id}&tab=${subgroup.urlSubgroup}"
-                   class="<c:choose><c:when test="${subgroup.active==true}">groupIsActive</c:when><c:otherwise>group</c:otherwise></c:choose>">${subgroup.tabName}</a>
-            </c:forEach>
+        <div class="tools-and-groups">
+            <div class="groups">
+                <c:forEach items="${info.subgroups}" var="subgroup">
+                    <a href="?id=${info.tObject.id}&tab=${subgroup.urlSubgroup}"
+                       class="<c:choose><c:when test="${subgroup.active==true}">groupIsActive</c:when><c:otherwise>group</c:otherwise></c:choose>">${subgroup.tabName}</a>
+                </c:forEach>
+            </div>
         </div>
     </div>
     <div class="content">
@@ -93,7 +95,9 @@
                                 <c:choose>
                                     <c:when test="${attribute.attrType == 1}">
                                         <td class="td-content-value">
-                                            <c:if test="${not attribute.readOnly}"><input type="text" class="" name=""
+                                            <c:if test="${not attribute.readOnly}"><input type="text"
+                                                                                          class="td-content-value"
+                                                                                          name=""
                                                                                           data-name="${attribute.attribute.attrId}"
                                                                                           id=""
                                                                                           value="${attribute.value}">
