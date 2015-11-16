@@ -76,12 +76,12 @@ public class CommonPageContextImpl implements CommonPageContext {
         try {
             clearPageData();
             Subgroup activeSubgroup = new Subgroup();
-            objectId = id;
             tObject = tObjectService.getObjectById(id);
             if (tObject == null) {
                 externalActiveSubgroup = null;
                 throw new RuntimeException("Object with current id not found.");
             }
+            objectId = tObject.getId();
             groups = tObjectService.getGroups(id);
             if (groups.size() != 0) {
                 for (Group group : groups) {
@@ -132,7 +132,7 @@ public class CommonPageContextImpl implements CommonPageContext {
                     groupAttributes = sqlStatement.getIntListBySQL(SystemConstants.SQL.GET_ATTRIBUTES_BY_GROUP_AND_TYPE, new Object[]{group.getGroupId(), tObject.getObjectType().getObjectTypeId()});
                     if (Integer.valueOf(1).equals(group.getFlag())) {
                         isInfoSubgroup = false;
-                        objectIds = sqlStatement.getIntListBySQL(SystemConstants.SQL.GET_STRUCTURAL_OBJECTS_BY_GROUP, new Object[]{group.getGroupId()});
+                        objectIds = sqlStatement.getIntListBySQL(SystemConstants.SQL.GET_STRUCTURAL_OBJECTS_BY_GROUP, new Object[]{group.getGroupId(), objectId});
                         for (Integer attrId : groupAttributes) {
                             TAttribute tAttribute = tObjectService.getAttributeById(attrId);
                             Integer attrType = tAttribute.gettAttrType().getAttrTypeId();

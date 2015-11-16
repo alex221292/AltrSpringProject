@@ -25,11 +25,15 @@ public interface SystemConstants {
                 "from t_attributes a,\n" +
                 "t_attr_type_defs atd,\n" +
                 "t_object_types ot,\n" +
+                "t_references r,\n" +
                 "t_objects o\n" +
                 "where a.attr_id in (select attr_id from t_attributes where attr_group_id = ?)\n" +
                 "and a.attr_type_id = 3\n" +
                 "and atd.attr_type_def_id = a.attr_type_def_id\n" +
                 "and ot.object_type_id = atd.object_type_id\n" +
+                "and r.attr_id = a.attr_id\n" +
+                "and r.object_id = ?\n" +
+                "and o.object_id = r.reference\n" +
                 "and o.object_type_id = ot.object_type_id";
         public static final String GET_ATTRIBUTES_BY_GROUP_AND_TYPE = "select a.attr_id\n" +
                 "from t_attributes a,\n" +
