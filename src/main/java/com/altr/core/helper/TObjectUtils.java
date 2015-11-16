@@ -28,18 +28,10 @@ public class TObjectUtils {
         return "test";
     }
 
-    @Transactional
-    public String getTextParameter(Integer objectId, Integer attrId) {
-        return sqlStatement.getStringBySQL(SystemConstants.SQL.GET_PARAMETER_VALUE_BY_OBJECT_AND_ATTR, new Object[]{objectId, attrId});
-    }
 
-    public void init() {
 
-    }
 
-    public void destroy() {
 
-    }
 
 
 }
