@@ -44,8 +44,9 @@ public class MainController {
         this.commonPageContext = co;
     }
 
-    @RequestMapping(value = "/common", method = RequestMethod.GET)
+    @RequestMapping(value = "/common**", method = RequestMethod.POST)
     public String defaultPage(@RequestParam(value = "id", required = false) String id,
+                              @RequestParam(value = "targetid", required = false) String targetid,
                               @RequestParam(value = "tab", required = false) String tab,
                               @RequestParam(value = "mode", required = false) String mode,
                               @RequestParam(value = "aid", required = false) String attrId,
@@ -57,12 +58,51 @@ public class MainController {
         String backUrl = request.getHeader("referer");
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String userName = auth.getName();
-        CoreTools.cleanMap(selectedItems, new String[]{"id", "tab", "mode", "aid", "command", "jAdapter"});
+        CoreTools.cleanMap(selectedItems, new String[]{"id", "tab", "mode", "aid", "command", "jAdapter", "_csrf"});
         if (id == null) id = SystemConstants.IDS.DEFAULT_OBJECT;
         if (CoreTools.isEmpty(tab)) tab = "empty";
         if (!CoreTools.isEmpty(command)){
             if ("delete".equals(command)){
                 tObjectService.deleteObjectBulk(selectedItems, Integer.parseInt(attrId));
+            }
+            else if ("update".equals(command)){
+                tObjectService.updateParamBulk(Integer.parseInt(id), selectedItems);
+            }
+        }
+        String url = "";
+        if ("1".equals(mode)) {
+            url = "edit";
+        } else {
+            url = "sosnicky_view";
+        }
+        commonPageContext.getPageData(Integer.parseInt(targetid), tab, mode);
+        commonPageContext.setUser(tObjectService.getCurrentUser(userName));
+        model.addAttribute("info", commonPageContext);
+        return url;
+    }
+
+    @RequestMapping(value = "/common**", method = RequestMethod.GET)
+    public String defaultPageGet(@RequestParam(value = "id", required = false) String id,
+                              @RequestParam(value = "tab", required = false) String tab,
+                              @RequestParam(value = "mode", required = false) String mode,
+                              @RequestParam(value = "aid", required = false) String attrId,
+                              @RequestParam(value = "command", required = false) String command,
+                              @RequestParam(value = "jAdapter", required = false) String jAdapter,
+                              @RequestParam Map<String, String> selectedItems,
+                              Model model,
+                              HttpServletRequest request) {
+        String backUrl = request.getHeader("referer");
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String userName = auth.getName();
+        CoreTools.cleanMap(selectedItems, new String[]{"id", "tab", "mode", "aid", "command", "jAdapter", "_csrf"});
+        if (id == null) id = SystemConstants.IDS.DEFAULT_OBJECT;
+        if (CoreTools.isEmpty(tab)) tab = "empty";
+        if (!CoreTools.isEmpty(command)){
+            if ("delete".equals(command)){
+                tObjectService.deleteObjectBulk(selectedItems, Integer.parseInt(attrId));
+            }
+            else if ("update".equals(command)){
+                tObjectService.updateParamBulk(Integer.parseInt(id), selectedItems);
             }
         }
         String url = "";
@@ -133,20 +173,25 @@ public class MainController {
         return redirectUrl;
     }
 
-    @RequestMapping(value = "/common", method = RequestMethod.POST)
+    /*@RequestMapping(value = "/common", method = RequestMethod.POST)
     public String update(@RequestParam(value = "objectid", required = false) String objectId,
                          @RequestParam(value = "tab", required = false) String tab,
+                         @RequestParam(value = "action", required = false) String action,
                          @RequestParam Map<String, String> updateParam, Model model) {
         updateParam.remove("objectid");
         updateParam.remove("tab");
         updateParam.remove("mode");
         updateParam.remove("id");
         updateParam.remove("_csrf");
+        updateParam.remove("action");
         //model.addAttribute("value1", updateParam.get(7));
-        tObjectService.updateParamBulk(Integer.parseInt(objectId), updateParam);
+        if ("update".equals(action)) {
+            tObjectService.updateParamBulk(Integer.parseInt(objectId), updateParam);
+        }
 
         return "redirect:/common?id=" + objectId + "&tab=" + tab;
     }
+    */
 
     /*@RequestMapping(value = "/create", method = RequestMethod.GET)
     public String create(Model model, HttpServletRequest request) {

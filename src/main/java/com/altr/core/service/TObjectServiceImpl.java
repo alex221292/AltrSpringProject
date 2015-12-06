@@ -24,6 +24,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class TObjectServiceImpl implements TObjectService {
 
@@ -184,6 +186,22 @@ public class TObjectServiceImpl implements TObjectService {
         } catch (Exception e){
         }
         return user;
+    }
+
+    @Override
+    @Transactional
+    public List<TObject> getPath(String backUrl, Integer id){
+        List<TObject> path = new ArrayList<TObject>();
+        String lastObjectId = "";
+        Pattern pattern = Pattern.compile("(\\?|&)id=(\\d.)");
+        Matcher matcher = pattern.matcher(backUrl);
+        if(matcher.find()){
+            int count = matcher.groupCount();
+            for(int i=2;i<=count;i++){
+                lastObjectId = matcher.group(i);
+            }
+        }
+        return path;
     }
 
 }

@@ -108,12 +108,19 @@
                         </thead>
                         <tbody>
                         <c:forEach items="${group.tObjects}" var="childObj">
-                            <tr class="tr-content">
-                                <td><input type="checkbox" name="${childObj.id}"></td>
-                                <td><a href="?id=${childObj.id}" class="object-content">${childObj.name}</a></td>
-                                <td style="padding-left:10px;">${childObj.objectType.name}</td>
-                                <td style="padding-left:10px;">${childObj.objectType.description}</td>
-                            </tr>
+                            <form name="${childObj.id}" method="POST" action="">
+                                <input type="hidden"
+                                       name="${_csrf.parameterName}"
+                                       value="${_csrf.token}"/>
+                                <input type="hidden" name="targetid" value="${childObj.id}">
+                                <tr class="tr-content">
+                                    <td><input type="checkbox" name="${childObj.id}"></td>
+                                    <td><a href='javascript:document.forms["<c:out value="${childObj.id}"/>"].submit()'
+                                           class="object-content">${childObj.name}</a></td>
+                                    <td style="padding-left:10px;">${childObj.objectType.name}</td>
+                                    <td style="padding-left:10px;">${childObj.objectType.description}</td>
+                                </tr>
+                            </form>
                         </c:forEach>
                         </tbody>
                     </table>

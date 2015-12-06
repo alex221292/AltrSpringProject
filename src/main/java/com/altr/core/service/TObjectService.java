@@ -22,4 +22,5 @@ public interface TObjectService
     public void deleteObjectBulk(Map<String, String> deleteParams, Integer attrId);
     public boolean createObject(String name, Integer parentId, Integer objectTypeId);
     public TObject getCurrentUser(String name);
+    public List<TObject> getPath(String backUrl, Integer id);
 }

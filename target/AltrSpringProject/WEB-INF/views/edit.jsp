@@ -44,6 +44,7 @@
     <div class="content">
         <form id="myform" action="" method="post">
             <input type="hidden" name="objectid" value="${info.tObject.id}">
+            <input type="hidden" name="command" value="update">
             <input type="hidden"
                    name="${_csrf.parameterName}"
                    value="${_csrf.token}"/>
