@@ -52,32 +52,27 @@ public class TObjectServiceImpl implements TObjectService {
 
 
     @Override
-    @Transactional
     public TObject getObjectById(int objectId) {
         return this.tObjectDAO.getObjectById(objectId);
     }
 
     @Override
-    @Transactional
     public TAttribute getAttributeById(int attrId) {
         return this.tObjectDAO.getAttributeById(attrId);
     }
 
     @Override
-    @Transactional
     public TAttrGroup getAttGroupById(int groupId) {
         return this.tObjectDAO.getAttrGroupById(groupId);
     }
 
     @Override
-    @Transactional
     public TListValue getListValueById(int lvId) {
         return this.tObjectDAO.getListValueById(lvId);
     }
 
 
     @Override
-    @Transactional
     public List<TObject> getChildrenObjectsByParentId(int id) {
         List<TObject> objects = new ArrayList<TObject>();
         try {
@@ -92,13 +87,11 @@ public class TObjectServiceImpl implements TObjectService {
     }
 
     @Override
-    @Transactional
     public List<Group> getGroups(int id) {
         return this.jdbcTemplate.query(SystemConstants.SQL.GET_GROUPS_BY_OBJECT_ID, new Object[]{id}, new SQLStatement.GeneralMapper<Group>(new Group()));
     }
 
     @Override
-    @Transactional
     public TParam getParamByObjectAndAttr(int object, int attribute) throws RuntimeException {
         try {
             return this.tObjectDAO.getParamByObjectAndAttr(object, attribute);
@@ -108,7 +101,6 @@ public class TObjectServiceImpl implements TObjectService {
     }
 
     @Override
-    @Transactional
     public void updateParam(final int objectId, final int attrId, final String value) {
         try {
             if (sqlStatement.getIntBySQL("select 1 from t_params where attr_id = ? and object_id = ?", new Object[]{attrId, objectId}) != 1) {
@@ -189,7 +181,6 @@ public class TObjectServiceImpl implements TObjectService {
     }
 
     @Override
-    @Transactional
     public List<TObject> getPath(String backUrl, Integer id){
         List<TObject> path = new ArrayList<TObject>();
         String lastObjectId = "";

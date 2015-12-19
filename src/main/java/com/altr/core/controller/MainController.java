@@ -46,52 +46,13 @@ public class MainController {
 
     @RequestMapping(value = "/common**", method = RequestMethod.POST)
     public String defaultPage(@RequestParam(value = "id", required = false) String id,
-                              @RequestParam(value = "targetid", required = false) String targetid,
                               @RequestParam(value = "tab", required = false) String tab,
                               @RequestParam(value = "mode", required = false) String mode,
                               @RequestParam(value = "aid", required = false) String attrId,
                               @RequestParam(value = "command", required = false) String command,
                               @RequestParam(value = "jAdapter", required = false) String jAdapter,
                               @RequestParam Map<String, String> selectedItems,
-                              Model model,
-                              HttpServletRequest request) {
-        String backUrl = request.getHeader("referer");
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String userName = auth.getName();
-        CoreTools.cleanMap(selectedItems, new String[]{"id", "tab", "mode", "aid", "command", "jAdapter", "_csrf"});
-        if (id == null) id = SystemConstants.IDS.DEFAULT_OBJECT;
-        if (CoreTools.isEmpty(tab)) tab = "empty";
-        if (!CoreTools.isEmpty(command)){
-            if ("delete".equals(command)){
-                tObjectService.deleteObjectBulk(selectedItems, Integer.parseInt(attrId));
-            }
-            else if ("update".equals(command)){
-                tObjectService.updateParamBulk(Integer.parseInt(id), selectedItems);
-            }
-        }
-        String url = "";
-        if ("1".equals(mode)) {
-            url = "edit";
-        } else {
-            url = "sosnicky_view";
-        }
-        commonPageContext.getPageData(Integer.parseInt(targetid), tab, mode);
-        commonPageContext.setUser(tObjectService.getCurrentUser(userName));
-        model.addAttribute("info", commonPageContext);
-        return url;
-    }
-
-    @RequestMapping(value = "/common**", method = RequestMethod.GET)
-    public String defaultPageGet(@RequestParam(value = "id", required = false) String id,
-                              @RequestParam(value = "tab", required = false) String tab,
-                              @RequestParam(value = "mode", required = false) String mode,
-                              @RequestParam(value = "aid", required = false) String attrId,
-                              @RequestParam(value = "command", required = false) String command,
-                              @RequestParam(value = "jAdapter", required = false) String jAdapter,
-                              @RequestParam Map<String, String> selectedItems,
-                              Model model,
-                              HttpServletRequest request) {
-        String backUrl = request.getHeader("referer");
+                              Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String userName = auth.getName();
         CoreTools.cleanMap(selectedItems, new String[]{"id", "tab", "mode", "aid", "command", "jAdapter", "_csrf"});
@@ -117,7 +78,17 @@ public class MainController {
         return url;
     }
 
-    @RequestMapping(value = "/admin**", method = RequestMethod.GET)
+    @RequestMapping(value = "/common**", method = RequestMethod.GET)
+    public String defaultPageGet(Model model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String userName = auth.getName();
+        commonPageContext.getPageData(Integer.parseInt(SystemConstants.IDS.DEFAULT_OBJECT), "empty", "0");
+        commonPageContext.setUser(tObjectService.getCurrentUser(userName));
+        model.addAttribute("info", commonPageContext);
+        return "sosnicky_view";
+    }
+
+    @RequestMapping(value = "/admin**", method = RequestMethod.POST)
     public ModelAndView adminPage() {
 
         ModelAndView model = new ModelAndView();

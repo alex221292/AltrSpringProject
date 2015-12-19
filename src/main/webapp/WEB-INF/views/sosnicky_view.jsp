@@ -36,7 +36,14 @@
         <div class="tools-and-groups">
             <div class="groups">
                 <c:forEach items="${info.subgroups}" var="subgroup">
-                    <a href="?id=${info.tObject.id}&tab=${subgroup.urlSubgroup}"
+                    <form name="tab${subgroup.urlSubgroup}" method="POST" action="" class="groups">
+                        <input type="hidden"
+                               name="${_csrf.parameterName}"
+                               value="${_csrf.token}"/>
+                        <input type="hidden" name="id" value="${info.tObject.id}">
+                        <input type="hidden" name="tab" value="${subgroup.urlSubgroup}">
+                    </form>
+                    <a href='javascript:document.forms["tab<c:out value="${subgroup.urlSubgroup}"/>"].submit()'
                        class="<c:choose><c:when test="${subgroup.active==true}">groupIsActive</c:when><c:otherwise>group</c:otherwise></c:choose>">${subgroup.tabName}</a>
                 </c:forEach>
             </div>
@@ -45,11 +52,14 @@
     <div class="content">
         <c:if test="${info.externalActiveSubgroup.subgroupType == 0}">
             <div class="parameters">
-                <form action="" method="get">
+                <form action="" method="post">
+                    <input type="hidden"
+                           name="${_csrf.parameterName}"
+                           value="${_csrf.token}"/>
                     <input type="hidden" name="id" value="${info.tObject.id}">
                     <input type="hidden" name="tab" value="${info.externalActiveSubgroup.urlSubgroup}">
                     <input type="hidden" name="mode" value="1">
-                    <input type="submit" value="Edit" class="button-objects">
+                    <a href="javascript:;" onclick="parentNode.submit();" class="button-href">Edit</a>
                 </form>
                 <table>
                     <tr>
@@ -68,31 +78,62 @@
             </div>
         </c:if>
         <c:forEach items="${info.externalActiveSubgroup.groups}" var="group">
-            <script>
-                function goToURL(command, id) {
-                    var selected = [];
-                    $('.parameters input:checked').each(function () {
-                        selected.push($(this).attr('name'));
-                    });
-                    if (selected.length == 0) {
-                        alert("You must choose at least one object");
-                        return false;
-                    }
-                    var url = "/AltrSpringProject/common?";
-                    for (var i = 0; i < selected.length; i++) {
-                        url = url + i + "=" + selected[i] + "&";
-                    }
-                    url = url + "objectid=" + '<c:out value="${info.tObject.id}"/>' + "&tab=" + '<c:out value="${info.externalActiveSubgroup.urlSubgroup}"/>' + "&" + command + "&aid=" + id;
-                    window.location.href = url;
-                }
-            </script>
             <p class="group-name">${group.name}</p>
-
             <div class="parameters">
+                <script>
+                    function goToURL(command, id) {
+                        var selected = [];
+                        $('.parameters input:checked').each(function () {
+                            selected.push($(this).attr('name'));
+                        });
+                        if (selected.length == 0) {
+                            alert("You must choose at least one object");
+                            return false;
+                        }
+                        var form = document.createElement("form");
+                        form.setAttribute("method", "post");
+                        form.setAttribute("action", "");
+
+                        var tokenField = document.createElement("input");
+                        tokenField.setAttribute("type", "hidden");
+                        tokenField.setAttribute("name", <c:out value="${_csrf.parameterName}"/>);
+                        tokenField.setAttribute("value", <c:out value="${_csrf.token}"/>);
+                        form.appendChild(tokenField);
+
+                        var commandField = document.createElement("input");
+                        commandField.setAttribute("type", "hidden");
+                        commandField.setAttribute("name", "command");
+                        commandField.setAttribute("value", "delete");
+                        form.appendChild(commandField);
+
+                        var objectidField = document.createElement("input");
+                        objectidField.setAttribute("type", "hidden");
+                        objectidField.setAttribute("name", "id");
+                        objectidField.setAttribute("value", <c:out value="${info.tObject.id}"/>);
+                        form.appendChild(objectidField);
+
+                        var tabField = document.createElement("input");
+                        tabField.setAttribute("type", "hidden");
+                        tabField.setAttribute("name", "tab");
+                        tabField.setAttribute("value", <c:out value="${info.externalActiveSubgroup.urlSubgroup}"/>);
+                        form.appendChild(tabField);
+
+                        for (var i = 0; i < selected.length; i++) {
+                            var hiddenField = document.createElement("input");
+                            hiddenField.setAttribute("type", "hidden");
+                            hiddenField.setAttribute("name", i);
+                            hiddenField.setAttribute("value", selected[i]);
+                            form.appendChild(hiddenField);
+                        }
+                        document.body.appendChild(form);
+                        form.submit();
+                        return true;
+                    }
+                </script>
                 <c:forEach items="${group.buttons}" var="button">
                     <div style="display: inline-block;">
-                        <a href="javascript:void(0)"
-                           onclick="javascript:goToURL(<c:out value="${button.command}"/>, <c:out
+                        <a href="javascript:;"
+                           onclick="goToURL(<c:out value="${button.command}"/>, <c:out
                                    value="${button.attrId}"/>)" class="button-href">${button.name}</a>
                     </div>
                 </c:forEach>
@@ -108,19 +149,20 @@
                         </thead>
                         <tbody>
                         <c:forEach items="${group.tObjects}" var="childObj">
-                            <form name="${childObj.id}" method="POST" action="">
+                            <form name="item${childObj.id}" method="POST" action="">
                                 <input type="hidden"
                                        name="${_csrf.parameterName}"
                                        value="${_csrf.token}"/>
-                                <input type="hidden" name="targetid" value="${childObj.id}">
-                                <tr class="tr-content">
-                                    <td><input type="checkbox" name="${childObj.id}"></td>
-                                    <td><a href='javascript:document.forms["<c:out value="${childObj.id}"/>"].submit()'
-                                           class="object-content">${childObj.name}</a></td>
-                                    <td style="padding-left:10px;">${childObj.objectType.name}</td>
-                                    <td style="padding-left:10px;">${childObj.objectType.description}</td>
-                                </tr>
+                                <input type="hidden" name="id" value="${childObj.id}">
+                                <input type="hidden" name="tab" value="${info.externalActiveSubgroup.urlSubgroup}">
                             </form>
+                            <tr class="tr-content">
+                                <td><input type="checkbox" name="${childObj.id}"></td>
+                                <td><a href="javascript:document.forms['item<c:out value="${childObj.id}"/>'].submit()"
+                                       class="object-content">${childObj.name}</a></td>
+                                <td style="padding-left:10px;">${childObj.objectType.name}</td>
+                                <td style="padding-left:10px;">${childObj.objectType.description}</td>
+                            </tr>
                         </c:forEach>
                         </tbody>
                     </table>
