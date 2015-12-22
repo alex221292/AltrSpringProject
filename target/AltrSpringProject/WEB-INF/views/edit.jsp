@@ -35,7 +35,14 @@
         <div class="tools-and-groups">
             <div class="groups">
                 <c:forEach items="${info.subgroups}" var="subgroup">
-                    <a href="?id=${info.tObject.id}&tab=${subgroup.urlSubgroup}"
+                    <form name="tab${subgroup.urlSubgroup}" method="POST" action="" class="groups">
+                        <input type="hidden"
+                               name="${_csrf.parameterName}"
+                               value="${_csrf.token}"/>
+                        <input type="hidden" name="id" value="${info.tObject.id}">
+                        <input type="hidden" name="tab" value="${subgroup.urlSubgroup}">
+                    </form>
+                    <a href='javascript:document.forms["tab<c:out value="${subgroup.urlSubgroup}"/>"].submit()'
                        class="<c:choose><c:when test="${subgroup.active==true}">groupIsActive</c:when><c:otherwise>group</c:otherwise></c:choose>">${subgroup.tabName}</a>
                 </c:forEach>
             </div>
@@ -43,7 +50,8 @@
     </div>
     <div class="content">
         <form id="myform" action="" method="post">
-            <input type="hidden" name="objectid" value="${info.tObject.id}">
+            <input type="hidden" name="id" value="${info.tObject.id}">
+            <input type="hidden" name="tab" value="${info.externalActiveSubgroup.urlSubgroup}">
             <input type="hidden" name="command" value="update">
             <input type="hidden"
                    name="${_csrf.parameterName}"

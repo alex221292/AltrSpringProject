@@ -2,6 +2,7 @@ package com.altr.core.service;
 
 
 import com.altr.core.dao.TObjectDAO;
+import com.altr.core.helper.CoreTools;
 import com.altr.core.helper.InternalModel.Group;
 import com.altr.core.helper.SystemConstants;
 import com.altr.core.model.*;
@@ -123,7 +124,6 @@ public class TObjectServiceImpl implements TObjectService {
     }
 
     @Override
-    @Transactional
     public void updateParamBulk(int objectId, Map<String, String> updateParam) {
         for (Map.Entry<String, String> entry : updateParam.entrySet()) {
             updateParam(objectId, Integer.parseInt(entry.getKey()), entry.getValue());
@@ -131,7 +131,6 @@ public class TObjectServiceImpl implements TObjectService {
     }
 
     @Override
-    @Transactional
     public void deleteObjectBulk(Map<String, String> deleteParams, Integer attrId) {
         final Integer objectTypeId = sqlStatement.getIntBySQL(SystemConstants.SQL.GET_REF_OBJ_TYPE_BY_ATTR_ID, new Object[]{attrId});
         for (final Map.Entry<String, String> entry : deleteParams.entrySet()) {
@@ -147,13 +146,12 @@ public class TObjectServiceImpl implements TObjectService {
                     }
                 });
             } catch (Exception e) {
-                logger.info("[deleteObjectBulk] Error");
+                logger.info("[deleteObjectBulk] Error" + e.getMessage());
             }
         }
     }
 
     @Override
-    @Transactional
     public boolean createObject(String name, Integer parentId, Integer objectTypeId) {
         try {
             TObject object = new TObject();
@@ -169,30 +167,54 @@ public class TObjectServiceImpl implements TObjectService {
 
     @Override
     @Transactional
-    public TObject getCurrentUser(String name){
+    public TObject getCurrentUser(String name) {
         TObject user = new TObject();
         try {
             user = tObjectDAO.getObjectById(sqlStatement.getIntBySQL(SystemConstants.SQL.GET_OBJECT_ID_BY_OT_AND_NAME,
                     new Object[]{9, name}));
             return user;
-        } catch (Exception e){
+        } catch (Exception e) {
         }
         return user;
     }
 
     @Override
-    public List<TObject> getPath(String backUrl, Integer id){
+    public List<TObject> getPath(String backUrl, Integer id) {
         List<TObject> path = new ArrayList<TObject>();
         String lastObjectId = "";
         Pattern pattern = Pattern.compile("(\\?|&)id=(\\d.)");
         Matcher matcher = pattern.matcher(backUrl);
-        if(matcher.find()){
+        if (matcher.find()) {
             int count = matcher.groupCount();
-            for(int i=2;i<=count;i++){
+            for (int i = 2; i <= count; i++) {
                 lastObjectId = matcher.group(i);
             }
         }
         return path;
+    }
+
+    @Override
+    @Transactional
+    public void performButtonAction(String buttonId, String jAdapter, String command, String objectId, Map<String, String> objectsForAction) throws Exception {
+        if (buttonId == null && command == null) {
+            throw new RuntimeException("[performButtonAction] Button id is null");
+        }
+        Integer id = 0;
+        if (jAdapter == null) {
+            if (buttonId != null) {
+                id = new Integer(buttonId);
+                TAttribute attribute = getAttributeById(id);
+                if (command == null || "".equals(command)) {
+                    command = CoreTools.getButtonCommand(attribute.getProperties());
+                }
+            }
+            logger.info("[performButtonAction] button command is " + command);
+            if ("delete".equals(command)) {
+                deleteObjectBulk(objectsForAction, id);
+            } else if ("update".equals(command)) {
+                updateParamBulk(new Integer(objectId), objectsForAction);
+            }
+        }
     }
 
 }

@@ -2,6 +2,7 @@ package com.altr.core.controller;
 
 import com.altr.core.helper.CoreTools;
 import com.altr.core.helper.SystemConstants;
+import com.altr.core.model.TAttribute;
 import com.altr.core.service.TObjectService;
 import com.altr.core.webcontext.CommonPageContext;
 import org.slf4j.Logger;
@@ -13,6 +14,7 @@ import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.keygen.StringKeyGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
@@ -45,25 +47,24 @@ public class MainController {
     }
 
     @RequestMapping(value = "/common**", method = RequestMethod.POST)
-    public String defaultPage(@RequestParam(value = "id", required = false) String id,
-                              @RequestParam(value = "tab", required = false) String tab,
-                              @RequestParam(value = "mode", required = false) String mode,
-                              @RequestParam(value = "aid", required = false) String attrId,
-                              @RequestParam(value = "command", required = false) String command,
-                              @RequestParam(value = "jAdapter", required = false) String jAdapter,
-                              @RequestParam Map<String, String> selectedItems,
+    public String defaultPage(@RequestParam Map<String, String> selectedItems,
                               Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String userName = auth.getName();
-        CoreTools.cleanMap(selectedItems, new String[]{"id", "tab", "mode", "aid", "command", "jAdapter", "_csrf"});
+        String id = selectedItems.get("id");
+        String tab = selectedItems.get("tab");
+        String mode = selectedItems.get("mode");
+        String attrId = selectedItems.get("aid");
+        String jAdapter = selectedItems.get("jAdapter");
+        String command = selectedItems.get("command");
+        CoreTools.cleanMap(selectedItems, new String[]{"id", "tab", "mode", "aid", "jAdapter", "command", "_csrf"});
         if (id == null) id = SystemConstants.IDS.DEFAULT_OBJECT;
         if (CoreTools.isEmpty(tab)) tab = "empty";
-        if (!CoreTools.isEmpty(command)){
-            if ("delete".equals(command)){
-                tObjectService.deleteObjectBulk(selectedItems, Integer.parseInt(attrId));
-            }
-            else if ("update".equals(command)){
-                tObjectService.updateParamBulk(Integer.parseInt(id), selectedItems);
+        if (!CoreTools.isEmpty(attrId) || command != null){
+            try {
+                tObjectService.performButtonAction(attrId, jAdapter, command, id, selectedItems);
+            } catch (Exception e){
+                logger.info("[defaultPage] " + e.toString());
             }
         }
         String url = "";

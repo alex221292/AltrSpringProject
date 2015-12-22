@@ -9,6 +9,61 @@
 <head>
     <link href="<c:url value="/resources/css/sosnicky_style.css" />" rel="stylesheet">
     <title>${info.tObject.name}</title>
+    <script>
+        function goToURL(id) {
+            var selected = [];
+            $('.parameters input:checked').each(function () {
+                selected.push($(this).attr('name'));
+            });
+            if (selected.length == 0) {
+                alert("You must choose at least one object");
+                return false;
+            }
+            var form = document.createElement("form");
+            form.setAttribute("method", "post");
+            form.setAttribute("action", "");
+
+            var tokenField = document.createElement("input");
+            tokenField.setAttribute("type", "hidden");
+            tokenField.setAttribute("name", "<c:out value="${_csrf.parameterName}"/>");
+            tokenField.setAttribute("value", "<c:out value="${_csrf.token}"/>");
+            form.appendChild(tokenField);
+
+            var commandField = document.createElement("input");
+            commandField.setAttribute("type", "hidden");
+            commandField.setAttribute("name", "command");
+            commandField.setAttribute("value", "delete");
+            form.appendChild(commandField);
+
+            var objectidField = document.createElement("input");
+            objectidField.setAttribute("type", "hidden");
+            objectidField.setAttribute("name", "id");
+            objectidField.setAttribute("value", "<c:out value="${info.tObject.id}"/>");
+            form.appendChild(objectidField);
+
+            var tabField = document.createElement("input");
+            tabField.setAttribute("type", "hidden");
+            tabField.setAttribute("name", "tab");
+            tabField.setAttribute("value", "<c:out value="${info.externalActiveSubgroup.urlSubgroup}"/>");
+            form.appendChild(tabField);
+
+            var buttonField = document.createElement("input");
+            buttonField.setAttribute("type", "hidden");
+            buttonField.setAttribute("name", "aid");
+            buttonField.setAttribute("value", id);
+            form.appendChild(buttonField);
+
+            for (var i = 0; i < selected.length; i++) {
+                var hiddenField = document.createElement("input");
+                hiddenField.setAttribute("type", "hidden");
+                hiddenField.setAttribute("name", i.toString());
+                hiddenField.setAttribute("value", selected[i]);
+                form.appendChild(hiddenField);
+            }
+            document.body.appendChild(form);
+            form.submit();
+        }
+    </script>
 </head>
 <body>
 <div class="main">
@@ -80,61 +135,10 @@
         <c:forEach items="${info.externalActiveSubgroup.groups}" var="group">
             <p class="group-name">${group.name}</p>
             <div class="parameters">
-                <script>
-                    function goToURL(command, id) {
-                        var selected = [];
-                        $('.parameters input:checked').each(function () {
-                            selected.push($(this).attr('name'));
-                        });
-                        if (selected.length == 0) {
-                            alert("You must choose at least one object");
-                            return false;
-                        }
-                        var form = document.createElement("form");
-                        form.setAttribute("method", "post");
-                        form.setAttribute("action", "");
-
-                        var tokenField = document.createElement("input");
-                        tokenField.setAttribute("type", "hidden");
-                        tokenField.setAttribute("name", <c:out value="${_csrf.parameterName}"/>);
-                        tokenField.setAttribute("value", <c:out value="${_csrf.token}"/>);
-                        form.appendChild(tokenField);
-
-                        var commandField = document.createElement("input");
-                        commandField.setAttribute("type", "hidden");
-                        commandField.setAttribute("name", "command");
-                        commandField.setAttribute("value", "delete");
-                        form.appendChild(commandField);
-
-                        var objectidField = document.createElement("input");
-                        objectidField.setAttribute("type", "hidden");
-                        objectidField.setAttribute("name", "id");
-                        objectidField.setAttribute("value", <c:out value="${info.tObject.id}"/>);
-                        form.appendChild(objectidField);
-
-                        var tabField = document.createElement("input");
-                        tabField.setAttribute("type", "hidden");
-                        tabField.setAttribute("name", "tab");
-                        tabField.setAttribute("value", <c:out value="${info.externalActiveSubgroup.urlSubgroup}"/>);
-                        form.appendChild(tabField);
-
-                        for (var i = 0; i < selected.length; i++) {
-                            var hiddenField = document.createElement("input");
-                            hiddenField.setAttribute("type", "hidden");
-                            hiddenField.setAttribute("name", i);
-                            hiddenField.setAttribute("value", selected[i]);
-                            form.appendChild(hiddenField);
-                        }
-                        document.body.appendChild(form);
-                        form.submit();
-                        return true;
-                    }
-                </script>
                 <c:forEach items="${group.buttons}" var="button">
                     <div style="display: inline-block;">
                         <a href="javascript:;"
-                           onclick="goToURL(<c:out value="${button.command}"/>, <c:out
-                                   value="${button.attrId}"/>)" class="button-href">${button.name}</a>
+                           onclick="goToURL(<c:out value="${button.attrId}"/>)" class="button-href">${button.name}</a>
                     </div>
                 </c:forEach>
                 <c:if test="${not empty group.tObjects}">

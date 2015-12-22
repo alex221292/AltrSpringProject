@@ -23,4 +23,5 @@ public interface TObjectService
     public boolean createObject(String name, Integer parentId, Integer objectTypeId);
     public TObject getCurrentUser(String name);
     public List<TObject> getPath(String backUrl, Integer id);
+    public void performButtonAction(String buttonId, String jAdapter, String command, String objectId, Map<String, String> objectsForAction) throws Exception;
 }

@@ -62,7 +62,7 @@ public class CoreTools {
 
     public static String getButtonCommand(String properties){
         String result = "";
-        Pattern pattern = Pattern.compile("command=(.*)");
+        Pattern pattern = Pattern.compile("command=([a-zA-Z]*)");
         Matcher matcher = pattern.matcher(properties);
         if(matcher.find()){
             int count = matcher.groupCount();
