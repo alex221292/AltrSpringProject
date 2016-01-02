@@ -47,6 +47,16 @@
                 </c:forEach>
             </div>
         </div>
+        <div class="title">
+            <form name="reload" method="POST" action="" class="groups">
+                <input type="hidden"
+                       name="${_csrf.parameterName}"
+                       value="${_csrf.token}"/>
+                <input type="hidden" name="id" value="${info.tObject.id}">
+                <input type="hidden" name="tab" value="${subgroup.urlSubgroup}">
+            </form>
+            <a href='javascript:document.forms["reload"].submit()' class="title">${info.tObject.name}</a>
+        </div>
     </div>
     <div class="content">
         <form id="myform" action="" method="post">

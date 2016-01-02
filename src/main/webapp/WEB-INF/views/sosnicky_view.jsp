@@ -103,6 +103,16 @@
                 </c:forEach>
             </div>
         </div>
+        <div class="title">
+            <form name="reload" method="POST" action="" class="groups">
+                <input type="hidden"
+                       name="${_csrf.parameterName}"
+                       value="${_csrf.token}"/>
+                <input type="hidden" name="id" value="${info.tObject.id}">
+                <input type="hidden" name="tab" value="${subgroup.urlSubgroup}">
+            </form>
+            <a href='javascript:document.forms["reload"].submit()' class="title">${info.tObject.name}</a>
+        </div>
     </div>
     <div class="content">
         <c:if test="${info.externalActiveSubgroup.subgroupType == 0}">
@@ -134,6 +144,7 @@
         </c:if>
         <c:forEach items="${info.externalActiveSubgroup.groups}" var="group">
             <p class="group-name">${group.name}</p>
+
             <div class="parameters">
                 <c:forEach items="${group.buttons}" var="button">
                     <div style="display: inline-block;">
