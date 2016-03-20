@@ -75,7 +75,7 @@ public class TObjectDAOImpl implements TObjectDAO {
             session.close();
         }
         catch (Exception e){
-            logger.error("[saveParam] Error");
+            logger.info("[saveParam] " + e.getMessage());
         }
     }
 

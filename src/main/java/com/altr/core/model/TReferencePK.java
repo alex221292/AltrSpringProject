@@ -1,9 +1,12 @@
 package com.altr.core.model;
 
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import java.io.Serializable;
 
-public class TReferencePK {
-    private static final long serialVersionUID = 3543236089104499992L;
+@Embeddable
+public class TReferencePK implements Serializable {
+    private static final long serialVersionUID = 3543236089104499993L;
     @Column(name = "attr_id")
     private Integer attrId;
     @Column(name = "object_id")

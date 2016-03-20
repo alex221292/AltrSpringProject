@@ -15,10 +15,7 @@
             $('.parameters input:checked').each(function () {
                 selected.push($(this).attr('name'));
             });
-            if (selected.length == 0) {
-                alert("You must choose at least one object");
-                return false;
-            }
+
             var form = document.createElement("form");
             form.setAttribute("method", "post");
             form.setAttribute("action", "");
@@ -32,7 +29,7 @@
             var commandField = document.createElement("input");
             commandField.setAttribute("type", "hidden");
             commandField.setAttribute("name", "command");
-            commandField.setAttribute("value", "delete");
+            commandField.setAttribute("value", "create");
             form.appendChild(commandField);
 
             var objectidField = document.createElement("input");

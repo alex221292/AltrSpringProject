@@ -47,6 +47,7 @@
                 <beans:value>com.altr.core.model.TAttrType</beans:value>
                 <beans:value>com.altr.core.model.TListValue</beans:value>
                 <beans:value>com.altr.core.model.TParam</beans:value>
+                <beans:value>com.altr.core.model.TReference</beans:value>
                 <beans:value>com.altr.core.model.TPicture</beans:value>
                 <beans:value>com.altr.core.model.TAttrDef</beans:value>
             </beans:list>

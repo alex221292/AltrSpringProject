@@ -152,15 +152,36 @@ public class TObjectServiceImpl implements TObjectService {
     }
 
     @Override
-    public boolean createObject(String name, Integer parentId, Integer objectTypeId) {
+    @Transactional
+    public TObject createObject(String name, Integer parentId, Integer objectTypeId) {
         try {
+            logger.info("START CREATION");
             TObject object = new TObject();
             object.setParentId(parentId);
             object.setName(name);
             object.setObjectType(tObjectDAO.getObjectTypeById(objectTypeId));
             tObjectDAO.save(object);
+            logger.info("FINISH CREATION");
+            return object;
+        } catch (Exception e) {
+            logger.info(e.getMessage());
+            return null;
+        }
+    }
+
+    @Override
+    @Transactional
+    public boolean setReference(Integer attrId, Integer objectId, Integer referenceId) {
+        try {
+            logger.info("START CREATION");
+            TReferencePK referencePK = new TReferencePK(attrId, objectId, referenceId);
+            TReference newReference = new TReference();
+            newReference.setId(referencePK);
+            tObjectDAO.save(newReference);
+            logger.info("FINISH CREATION");
             return true;
         } catch (Exception e) {
+            logger.info(e.getMessage());
             return false;
         }
     }
@@ -195,7 +216,7 @@ public class TObjectServiceImpl implements TObjectService {
 
     @Override
     @Transactional
-    public void performButtonAction(String buttonId, String jAdapter, String command, String objectId, Map<String, String> objectsForAction) throws Exception {
+    public String performButtonAction(String buttonId, String jAdapter, String command, String objectId, Map<String, String> objectsForAction) throws Exception {
         if (buttonId == null && command == null) {
             throw new RuntimeException("[performButtonAction] Button id is null");
         }
@@ -213,8 +234,12 @@ public class TObjectServiceImpl implements TObjectService {
                 deleteObjectBulk(objectsForAction, id);
             } else if ("update".equals(command)) {
                 updateParamBulk(new Integer(objectId), objectsForAction);
+            } else if ("create".equals(command)) {
+                return command;
             }
+            return null;
         }
+        return null;
     }
 
 }

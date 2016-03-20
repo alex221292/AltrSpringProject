@@ -23,7 +23,7 @@ import java.util.Collection;
 import java.util.List;
 
 @Scope(value="session", proxyMode = ScopedProxyMode.TARGET_CLASS)
-public class CommonPageContextImpl implements CommonPageContext {
+public class CommonPageContextImpl extends UniPage implements CommonPageContext {
     private static final Logger logger = LoggerFactory.getLogger(CommonPageContextImpl.class);
 
     private TObjectService tObjectService;
@@ -52,7 +52,7 @@ public class CommonPageContextImpl implements CommonPageContext {
     private String subgroup;
     private Subgroup externalActiveSubgroup;
     private String test;
-    private TObject user;
+
 
     @Override
     @Transactional
@@ -264,10 +264,10 @@ public class CommonPageContextImpl implements CommonPageContext {
     }
 
     public TObject getUser() {
-        return user;
+        return super.getUser();
     }
 
     public void setUser(TObject user) {
-        this.user = user;
+        super.setUser(user);
     }
 }

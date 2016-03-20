@@ -3,6 +3,7 @@ package com.altr.core.controller;
 import com.altr.core.helper.CoreTools;
 import com.altr.core.helper.SystemConstants;
 import com.altr.core.model.TAttribute;
+import com.altr.core.model.TObject;
 import com.altr.core.service.TObjectService;
 import com.altr.core.webcontext.CommonPageContext;
 import org.slf4j.Logger;
@@ -51,41 +52,66 @@ public class MainController {
                               Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String userName = auth.getName();
+        String newName = selectedItems.get("newname");
         String id = selectedItems.get("id");
         String tab = selectedItems.get("tab");
         String mode = selectedItems.get("mode");
+        if (newName != null){
+            TObject newInstance = tObjectService.createObject(newName, null, 7);
+            Integer newId = newInstance.getId();
+            logger.info("NEW ID = " + newId);
+            tObjectService.setReference(4, Integer.parseInt(SystemConstants.IDS.DEFAULT_OBJECT), newId);
+            commonPageContext.setUser(tObjectService.getCurrentUser(userName));
+            commonPageContext.getPageData(Integer.parseInt(SystemConstants.IDS.DEFAULT_OBJECT), tab, mode);
+            model.addAttribute("info", commonPageContext);
+            return "redirect:/common";
+        }
         String attrId = selectedItems.get("aid");
         String jAdapter = selectedItems.get("jAdapter");
         String command = selectedItems.get("command");
         CoreTools.cleanMap(selectedItems, new String[]{"id", "tab", "mode", "aid", "jAdapter", "command", "_csrf"});
+        String nextPage = "";
         if (id == null) id = SystemConstants.IDS.DEFAULT_OBJECT;
         if (CoreTools.isEmpty(tab)) tab = "empty";
         if (!CoreTools.isEmpty(attrId) || command != null){
             try {
-                tObjectService.performButtonAction(attrId, jAdapter, command, id, selectedItems);
+                nextPage = tObjectService.performButtonAction(attrId, jAdapter, command, id, selectedItems);
             } catch (Exception e){
                 logger.info("[defaultPage] " + e.toString());
             }
         }
-        String url = "";
+        commonPageContext.setUser(tObjectService.getCurrentUser(userName));
         if ("1".equals(mode)) {
-            url = "edit";
-        } else {
-            url = "sosnicky_view";
+            nextPage = "edit";
+        } else if ("create".equals(nextPage)){
+            model.addAttribute("info", commonPageContext);
+            return nextPage;
+        }
+        else {
+            nextPage = "sosnicky_view";
         }
         commonPageContext.getPageData(Integer.parseInt(id), tab, mode);
-        commonPageContext.setUser(tObjectService.getCurrentUser(userName));
         model.addAttribute("info", commonPageContext);
-        return url;
+        return nextPage;
     }
 
     @RequestMapping(value = "/common**", method = RequestMethod.GET)
-    public String defaultPageGet(Model model) {
+    public String defaultPageGet(@RequestParam(value = "id", required = false) String id, Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         String userName = auth.getName();
-        commonPageContext.getPageData(Integer.parseInt(SystemConstants.IDS.DEFAULT_OBJECT), "empty", "0");
+        if (id == null) id = SystemConstants.IDS.DEFAULT_OBJECT;
+        commonPageContext.getPageData(Integer.parseInt(id), "empty", "0");
         commonPageContext.setUser(tObjectService.getCurrentUser(userName));
         model.addAttribute("info", commonPageContext);
+        return "sosnicky_view";
+    }
+
+    @RequestMapping(value = "/create**", method = RequestMethod.POST)
+    public String createObject(@RequestParam(value = "newname", required = false) String name, Model model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        String userName = auth.getName();
+        if (name == null) name = "newname";
+        tObjectService.createObject(name, null, 7);
         return "sosnicky_view";
     }
 

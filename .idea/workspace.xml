@@ -2,13 +2,57 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5bfeec51-d648-4793-8b85-eb4ff35bfa9e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/AltrSpringProject.war" afterPath="$PROJECT_DIR$/target/AltrSpringProject.war" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create.jsp" />
+      <change type="DELETED" beforePath="E:\GIT\AltrSpringProject\AltrSpringProject.iml" afterPath="" />
+      <change type="DELETED" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\dao\TAttributeDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\dao\TAttributeDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\service\TAttributeService.class" afterPath="" />
+      <change type="DELETED" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\service\TAttributeServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\service\TObjectServiceImpl$2.class" afterPath="" />
+      <change type="DELETED" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\dao\TAttributeDAO.class" afterPath="" />
+      <change type="DELETED" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\dao\TAttributeDAOImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\service\TAttributeService.class" afterPath="" />
+      <change type="DELETED" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\service\TAttributeServiceImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\service\TObjectServiceImpl$2.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject.war" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject.war" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\webcontext\CommonPageContextImpl.class" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\webcontext\CommonPageContextImpl.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\webcontext\CommonPageContextImpl.class" afterPath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\webcontext\CommonPageContextImpl.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\helper\CoreTools.class" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\helper\CoreTools.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\helper\CoreTools.class" afterPath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\helper\CoreTools.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\helper\InternalModel\Group.class" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\helper\InternalModel\Group.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\helper\InternalModel\Group.class" afterPath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\helper\InternalModel\Group.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\controller\MainController.class" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\controller\MainController.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\controller\MainController.class" afterPath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\controller\MainController.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\helper\SystemConstants$SQL.class" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\helper\SystemConstants$SQL.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\helper\SystemConstants$SQL.class" afterPath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\helper\SystemConstants$SQL.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\dao\TObjectDAO.class" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\dao\TObjectDAO.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\dao\TObjectDAO.class" afterPath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\dao\TObjectDAO.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\dao\TObjectDAOImpl.class" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\dao\TObjectDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\dao\TObjectDAOImpl.class" afterPath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\dao\TObjectDAOImpl.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\service\TObjectService.class" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\service\TObjectService.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\service\TObjectService.class" afterPath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\service\TObjectService.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\service\TObjectServiceImpl$1.class" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\service\TObjectServiceImpl$1.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\service\TObjectServiceImpl$1.class" afterPath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\service\TObjectServiceImpl$1.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\service\TObjectServiceImpl.class" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\service\TObjectServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\service\TObjectServiceImpl.class" afterPath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\service\TObjectServiceImpl.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\webcontext\UniPage.class" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\classes\com\altr\core\webcontext\UniPage.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\webcontext\UniPage.class" afterPath="E:\GIT\AltrSpringProject\target\classes\com\altr\core\webcontext\UniPage.class" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\resources\css\logo.png" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\resources\css\logo.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/CommonPageContextImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/CommonPageContextImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/altr/core/controller/MainController.java" afterPath="$PROJECT_DIR$/src/main/java/com/altr/core/controller/MainController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/altr/core/dao/TObjectDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/altr/core/dao/TObjectDAO.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/altr/core/dao/TObjectDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/altr/core/dao/TObjectDAOImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectService.java" afterPath="$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/altr/core/model/TParamPK.java" afterPath="$PROJECT_DIR$/src/main/java/com/altr/core/model/TParamPK.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/altr/core/model/TReference.java" afterPath="$PROJECT_DIR$/src/main/java/com/altr/core/model/TReference.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/altr/core/model/TReferencePK.java" afterPath="$PROJECT_DIR$/src/main/java/com/altr/core/model/TReferencePK.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/UniPage.java" afterPath="$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/UniPage.java" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\views\common.jsp" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\views\common.jsp" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\views\edit.jsp" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\views\edit.jsp" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\maven-archiver\pom.properties" afterPath="E:\GIT\AltrSpringProject\target\maven-archiver\pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" />
+      <change type="MODIFICATION" beforePath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\spring\appServlet\servlet-context.xml" afterPath="E:\GIT\AltrSpringProject\target\AltrSpringProject\WEB-INF\spring\appServlet\servlet-context.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sosnicky_view.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sosnicky_view.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AltrSpringProject.iws" />
@@ -43,21 +87,10 @@
       <file leaf-file-name="TReferencePK.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TReferencePK.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
-              <caret line="11" column="29" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1105">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
               <folding>
-                <element signature="e#599#600#0" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
-                <element signature="e#673#674#0" expanded="true" />
-                <element signature="e#709#710#0" expanded="true" />
-                <element signature="e#745#746#0" expanded="true" />
-                <element signature="e#776#777#0" expanded="true" />
-                <element signature="e#825#826#0" expanded="true" />
-                <element signature="e#865#866#0" expanded="true" />
-                <element signature="e#902#903#0" expanded="true" />
-                <element signature="e#934#935#0" expanded="true" />
-                <element signature="e#985#986#0" expanded="true" />
-                <element signature="e#1027#1028#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,28 +99,64 @@
       <file leaf-file-name="TParam.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TParam.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="357" max-vertical-offset="986">
-              <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="44" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1020">
+              <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+              <folding>
+                <element signature="e#653#654#0" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TReference.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TReference.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+              <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TReference.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TReference.java">
+      <file leaf-file-name="servlet-context.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.8506329" vertical-offset="0" max-vertical-offset="952">
-              <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+            <state vertical-scroll-proportion="-9.0" vertical-offset="489" max-vertical-offset="1734">
+              <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TObjectServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="982" max-vertical-offset="3536">
+              <caret line="108" column="31" selection-start-line="108" selection-start-column="23" selection-end-line="108" selection-end-column="31" />
               <folding>
-                <element signature="e#514#515#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#581#582#0" expanded="true" />
-                <element signature="e#609#610#0" expanded="true" />
-                <element signature="e#1007#1008#0" expanded="true" />
-                <element signature="e#1052#1053#0" expanded="true" />
-                <element signature="e#1099#1100#0" expanded="true" />
-                <element signature="e#1146#1147#0" expanded="true" />
+                <marker date="1458495609534" expanded="true" signature="4824:4888" placeholder="DELETE from ..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TObjectDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/dao/TObjectDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="845" max-vertical-offset="1615">
+              <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MainController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/controller/MainController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8203753" vertical-offset="238" max-vertical-offset="3026">
+              <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -95,8 +164,30 @@
       <file leaf-file-name="TParamPK.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TParamPK.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="29" max-vertical-offset="935">
-              <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="create.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-14.692307" vertical-offset="264" max-vertical-offset="884">
+              <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TObjectService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+              <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -126,8 +217,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/dao/TAttributeDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/service/TAttributeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/service/TAttributeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/model/TAttrGroup.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common2.jsp" />
@@ -140,7 +229,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/sql/SQLStatement.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/beans.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/helper/TObjectUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/model/TParamPK.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/helper/InternalModel/Group.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/model/TListValue.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -158,25 +246,28 @@
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/helper/SystemConstants.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/helper/CoreTools.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/CommonPageContext.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/helper/InternalModel/Attribute.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/ThisPage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/UniPage.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common1.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/css/style.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/model/TParam.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/CommonPageContextImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/model/TReferencePK.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/model/TReference.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/dao/TObjectDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/controller/MainController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/dao/TObjectDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sosnicky_view.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/UniPage.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/CommonPageContextImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/CommonPageContext.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/dao/TObjectDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/model/TReference.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/model/TParamPK.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/model/TReferencePK.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/altr/core/controller/MainController.java" />
       </list>
     </option>
   </component>
@@ -340,6 +431,70 @@
               <option name="myItemId" value="webapp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AltrSpringProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AltrSpringProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spring" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="appServlet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AltrSpringProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AltrSpringProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -381,7 +536,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="altr" />
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webcontext" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -404,10 +563,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="altr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -434,10 +589,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="altr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -471,10 +622,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="altr" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -505,7 +652,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="altr" />
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="helper" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AltrSpringProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AltrSpringProject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -536,10 +709,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="altr" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -929,6 +1098,7 @@
       <workItem from="1443945437819" duration="2217000" />
       <workItem from="1443971861993" duration="599000" />
       <workItem from="1444482189544" duration="4528000" />
+      <workItem from="1458490044330" duration="8071000" />
     </task>
     <task id="LOCAL-00001" summary="Add Delete action in serviceObject&#10;                                              Add Delete button in common page and JS script">
       <created>1443895210613</created>
@@ -952,43 +1122,43 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="248292000" />
+    <option name="totallyTimeSpent" value="256363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="56" y="-8" width="1318" height="784" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Java2SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32747602" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3295583" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Java2SQL" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24880762" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1014,7 +1184,9 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add create method, fix update method" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1022,6 +1194,24 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TReference.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="952">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TParamPK.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="29" max-vertical-offset="935">
+          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/4.0.3.RELEASE/spring-jdbc-4.0.3.RELEASE.jar!/org/springframework/jdbc/core/JdbcTemplate.class">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.5482143" vertical-offset="969" max-vertical-offset="19091">
@@ -1068,34 +1258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33274338" vertical-offset="1733" max-vertical-offset="51952">
           <caret line="150" column="11" selection-start-line="150" selection-start-column="11" selection-end-line="150" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/dao/TAttributeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/service/TAttributeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="221">
-          <caret line="5" column="51" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/dao/TAttributeDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="459">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/service/TAttributeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5588235" vertical-offset="0" max-vertical-offset="578">
-          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -1191,25 +1353,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1598">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="935">
           <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1016" max-vertical-offset="1819">
-          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1234,31 +1382,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/CommonPageContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="357">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/UniPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/spring-security.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.12296564" vertical-offset="51" max-vertical-offset="1105">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/helper/SystemConstants.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="642" max-vertical-offset="1207">
-          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1284,31 +1411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/CommonPageContextImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1781" max-vertical-offset="3689">
-          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-          <folding>
-            <element signature="e#8636#8637#0" expanded="false" />
-            <element signature="e#8667#8668#0" expanded="false" />
-            <element signature="e#8717#8718#0" expanded="false" />
-            <element signature="e#8747#8748#0" expanded="false" />
-            <element signature="e#8800#8801#0" expanded="false" />
-            <element signature="e#8829#8830#0" expanded="false" />
-            <element signature="e#8876#8877#0" expanded="false" />
-            <element signature="e#8904#8905#0" expanded="false" />
-            <element signature="e#8953#8954#0" expanded="false" />
-            <element signature="e#8984#8985#0" expanded="false" />
-            <element signature="e#9042#9043#0" expanded="false" />
-            <element signature="e#9074#9075#0" expanded="false" />
-            <element signature="e#9139#9140#0" expanded="false" />
-            <element signature="e#9184#9185#0" expanded="false" />
-            <element signature="e#9229#9230#0" expanded="false" />
-            <element signature="e#9256#9257#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/common.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3153989" vertical-offset="1207" max-vertical-offset="2601">
@@ -1325,26 +1427,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41459075" vertical-offset="549" max-vertical-offset="2550">
-          <caret line="46" column="43" selection-start-line="46" selection-start-column="43" selection-end-line="46" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45257902" vertical-offset="4029" max-vertical-offset="4641">
           <caret line="253" column="0" selection-start-line="253" selection-start-column="0" selection-end-line="253" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TAttribute.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="675" max-vertical-offset="1581">
+          <caret line="75" column="11" selection-start-line="75" selection-start-column="11" selection-end-line="75" selection-end-column="11" />
+          <folding>
+            <element signature="e#1380#1381#0" expanded="true" />
+            <element signature="e#1413#1414#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/helper/SystemConstants.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.0761062" vertical-offset="999" max-vertical-offset="1564">
+          <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TParam.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/CommonPageContext.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="102" max-vertical-offset="986">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="44" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/CommonPageContextImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="115" max-vertical-offset="4403">
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+          <folding>
+            <element signature="e#10994#10995#0" expanded="true" />
+            <element signature="e#11032#11033#0" expanded="true" />
+            <element signature="e#11073#11074#0" expanded="true" />
+            <element signature="e#11108#11109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/webcontext/UniPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
+          <caret line="9" column="5" selection-start-line="7" selection-start-column="4" selection-end-line="9" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/sosnicky_view.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-37.03846" vertical-offset="193" max-vertical-offset="3774">
+          <caret line="68" column="42" selection-start-line="68" selection-start-column="36" selection-end-line="68" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/edit.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6567718" vertical-offset="751" max-vertical-offset="2941">
+          <caret line="65" column="12" selection-start-line="65" selection-start-column="12" selection-end-line="67" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/create.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-14.692307" vertical-offset="264" max-vertical-offset="884">
+          <caret line="38" column="43" selection-start-line="38" selection-start-column="43" selection-end-line="38" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
+          <caret line="22" column="18" selection-start-line="22" selection-start-column="18" selection-end-line="22" selection-end-column="18" />
           <folding />
         </state>
       </provider>
@@ -1352,90 +1517,81 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/dao/TObjectDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
-          <caret line="14" column="20" selection-start-line="14" selection-start-column="20" selection-end-line="14" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/controller/MainController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1717" max-vertical-offset="2312">
-          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="22" column="85" selection-start-line="22" selection-start-column="85" selection-end-line="22" selection-end-column="85" />
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/dao/TObjectDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="952" max-vertical-offset="1615">
-          <caret line="70" column="0" selection-start-line="70" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="845" max-vertical-offset="1615">
+          <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TReferencePK.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="29" />
-          <folding>
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
-            <element signature="e#673#674#0" expanded="true" />
-            <element signature="e#709#710#0" expanded="true" />
-            <element signature="e#745#746#0" expanded="true" />
-            <element signature="e#776#777#0" expanded="true" />
-            <element signature="e#825#826#0" expanded="true" />
-            <element signature="e#865#866#0" expanded="true" />
-            <element signature="e#902#903#0" expanded="true" />
-            <element signature="e#934#935#0" expanded="true" />
-            <element signature="e#985#986#0" expanded="true" />
-            <element signature="e#1027#1028#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TParamPK.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="29" max-vertical-offset="935">
-          <caret line="17" column="11" selection-start-line="17" selection-start-column="11" selection-end-line="17" selection-end-column="11" />
+        <state vertical-scroll-proportion="-9.0" vertical-offset="489" max-vertical-offset="1734">
+          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/service/TObjectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21938775" vertical-offset="1554" max-vertical-offset="3162">
-          <caret line="135" column="31" selection-start-line="135" selection-start-column="31" selection-end-line="135" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="982" max-vertical-offset="3536">
+          <caret line="108" column="31" selection-start-line="108" selection-start-column="23" selection-end-line="108" selection-end-column="31" />
           <folding>
-            <marker date="1444486449677" expanded="true" signature="-1:-1" placeholder="DELETE from ..." />
-            <marker date="1444486449677" expanded="true" signature="-1:-1" placeholder="INSERT into ..." />
-            <marker date="1444486449677" expanded="true" signature="-1:-1" placeholder="DELETE from ..." />
+            <marker date="1458495609534" expanded="true" signature="4824:4888" placeholder="DELETE from ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1020">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="25" selection-end-line="18" selection-end-column="25" />
+          <folding>
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TReference.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.8506329" vertical-offset="0" max-vertical-offset="952">
-          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
+          <caret line="26" column="21" selection-start-line="26" selection-start-column="21" selection-end-line="26" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TReferencePK.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="1105">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding>
-            <element signature="e#514#515#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#1007#1008#0" expanded="true" />
-            <element signature="e#1052#1053#0" expanded="true" />
-            <element signature="e#1099#1100#0" expanded="true" />
-            <element signature="e#1146#1147#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/model/TParamPK.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="986">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/altr/core/controller/MainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8203753" vertical-offset="238" max-vertical-offset="3026">
+          <caret line="61" column="38" selection-start-line="61" selection-start-column="38" selection-end-line="61" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

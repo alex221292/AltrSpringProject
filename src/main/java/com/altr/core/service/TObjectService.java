@@ -20,8 +20,9 @@ public interface TObjectService
     public void updateParam(int objectId, int attrId, String value) throws Exception;
     public void updateParamBulk(int objectId, Map<String, String> updateParam);
     public void deleteObjectBulk(Map<String, String> deleteParams, Integer attrId);
-    public boolean createObject(String name, Integer parentId, Integer objectTypeId);
+    public TObject createObject(String name, Integer parentId, Integer objectTypeId);
+    public boolean setReference(Integer attrId, Integer objectId, Integer referenceId);
     public TObject getCurrentUser(String name);
     public List<TObject> getPath(String backUrl, Integer id);
-    public void performButtonAction(String buttonId, String jAdapter, String command, String objectId, Map<String, String> objectsForAction) throws Exception;
+    public String performButtonAction(String buttonId, String jAdapter, String command, String objectId, Map<String, String> objectsForAction) throws Exception;
 }

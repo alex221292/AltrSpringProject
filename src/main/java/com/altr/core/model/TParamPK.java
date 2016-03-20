@@ -7,8 +7,7 @@ import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 @Embeddable
-public class TParamPK implements Serializable
-{
+public class TParamPK implements Serializable {
     private static final long serialVersionUID = 3543236089104499992L;
     @Column(name = "attr_id")
     private Integer attrId;
